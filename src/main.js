@@ -13,6 +13,6 @@ let config = {
              }
          }
      },
-     scene: []
+     scene: [ menu, play ]
  };
  
