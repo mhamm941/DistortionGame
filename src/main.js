@@ -1,8 +1,8 @@
 let config = {
     // parent: 'myGame',
      type: Phaser.WEBGL,
-     width: 1480,
-     height: 960,
+     width: 850,
+     height: 600,
      physics: {
          default: 'arcade',
          arcade: {
@@ -15,4 +15,9 @@ let config = {
      },
      scene: [ menu, play ]
  };
+
+ let game = new Phaser.Game(config);
+ 
+ let keyLEFT;
+ let keyRIGHT;
  
