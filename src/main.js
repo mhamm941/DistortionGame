@@ -20,4 +20,4 @@ let config = {
  
  let keyLEFT;
  let keyRIGHT;
- 
+ let keySPACE;

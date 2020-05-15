@@ -9,7 +9,7 @@ class player extends Phaser.Physics.Arcade.Sprite {
         //setting gravity
         this.setGravityY(400);
         this.setDragX(50);
-        this.setScale(2.5);
+        this.setScale(0.5);
 
     }
 }

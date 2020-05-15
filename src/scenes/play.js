@@ -2,10 +2,12 @@ class play extends Phaser.Scene {
     constructor() {
         super("playScene");
     }
+
     preload() {
         this.load.image('player', './assets/playerPLACEHOLDER.png');
         this.load.image('background', './assets/backgroundPLACEHOLDER.png');
     }
+
     create() {
         
         this.platform = this.add.group();
@@ -19,12 +21,18 @@ class play extends Phaser.Scene {
         this.background = this.add.tileSprite(0, 0, 850, 600, 'background').setOrigin(0, 0);
 
         this.playerChar = new player(this, game.config.width/8, game.config.height/2, 'player');
-        this.runner.setGravityY(300);
+        this.playerChar.setGravityY(300);
+
+        this.physics.add.collider(this.playerChar, this.platform);
 
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
+        keySPACE = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
     }
+
     update() {
+
+        this.background.tilePositionX += 3;
 
     }
 }
