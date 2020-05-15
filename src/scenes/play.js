@@ -34,5 +34,20 @@ class play extends Phaser.Scene {
 
         this.background.tilePositionX += 3;
 
+        this.playerChar.isGrounded = this.playerChar.body.touching.down;
+
+        if(this.playerChar.isGrounded) {
+            if (Phaser.Input.Keyboard.JustDown(keySPACE)) {
+            this.playerChar.setVelocity(0, -250);
+            }
+             else if(Phaser.Input.Keyboard.JustDown(keyLEFT)) {
+            this.playerChar.tilePositionX -= 10;
+            console.log("left");
+        }
+            else if(Phaser.Input.Keyboard.JustDown(keyRIGHT)) {
+            this.playerChar.tilePositionX += 10;
+            console.log("right");
+        }
+    }
     }
 }
