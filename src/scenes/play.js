@@ -6,6 +6,8 @@ class play extends Phaser.Scene {
     preload() {
         this.load.image('player', './assets/playerPLACEHOLDER.png');
         this.load.image('background', './assets/backgroundPLACEHOLDER.png');
+
+        this.load.audio('jump', './assets/jump.wav');
     }
 
     create() {
@@ -39,6 +41,7 @@ class play extends Phaser.Scene {
         if(this.playerChar.isGrounded) {
             if (Phaser.Input.Keyboard.JustDown(keySPACE)) {
             this.playerChar.setVelocity(0, -250);
+            this.sound.play('jump');
             }
              else if(Phaser.Input.Keyboard.JustDown(keyLEFT)) {
             this.playerChar.tilePositionX -= 10;

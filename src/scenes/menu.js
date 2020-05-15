@@ -2,6 +2,9 @@ class menu extends Phaser.Scene {
     constructor() {
         super("menuScene");
     }
+    preload() {
+        this.load.audio('select', './assets/select.wav');
+    }
 
     create() {
 
@@ -16,6 +19,7 @@ class menu extends Phaser.Scene {
         })
         this.input.keyboard.on('keydown', () => {
             this.scene.start("playScene");
+            this.sound.play('select');
         }, this);
     }
 
