@@ -6,6 +6,7 @@ class play extends Phaser.Scene {
     preload() {
         this.load.image('player', './assets/playerPLACEHOLDER.png');
         this.load.image('background', './assets/backgroundPLACEHOLDER.png');
+        this.load.image('ground', './assets/groundPLACEHOLDER.png');
 
         this.load.audio('jump', './assets/jump.wav');
     }
@@ -14,7 +15,7 @@ class play extends Phaser.Scene {
         
         this.platform = this.add.group();
         for(let i = 0; i < game.config.width; i += 32) {
-            let groundTile = this.physics.add.sprite(i, game.config.height - 100, 'groundScroll').setOrigin(0);
+            let groundTile = this.physics.add.sprite(i, game.config.height - 100).setOrigin(0);
             groundTile.body.immovable = true;
             groundTile.body.allowGravity = false;
             this.platform.add(groundTile);
@@ -22,7 +23,9 @@ class play extends Phaser.Scene {
 
         this.background = this.add.tileSprite(0, 0, 850, 600, 'background').setOrigin(0, 0);
 
-        this.playerChar = new player(this, game.config.width/8, game.config.height/2, 'player');
+        this.ground = this.add.tileSprite(0, game.config.height - 100, 850, 100, 'ground').setOrigin(0, 0);
+
+        this.playerChar = new player(this, game.config.width/8, game.config.height - 150, 'player');
         this.playerChar.setGravityY(300);
 
         this.physics.add.collider(this.playerChar, this.platform);
@@ -34,7 +37,7 @@ class play extends Phaser.Scene {
 
     update() {
 
-        this.background.tilePositionX += 3;
+        this.background.tilePositionX += 2;
 
         this.playerChar.update();
 
@@ -45,14 +48,6 @@ class play extends Phaser.Scene {
             this.playerChar.setVelocity(0, -250);
             this.sound.play('jump');
             }
-         /*    else if(Phaser.Input.Keyboard.JustDown(keyLEFT)) {
-            this.playerChar.tilePositionX -= 10;
-            console.log("left");
-        }
-            else if(Phaser.Input.Keyboard.JustDown(keyRIGHT)) {
-            this.playerChar.tilePositionX += 10;
-            console.log("right");
-        } */
     }
     }
 }
