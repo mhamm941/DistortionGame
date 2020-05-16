@@ -36,6 +36,8 @@ class play extends Phaser.Scene {
 
         this.background.tilePositionX += 3;
 
+        this.playerChar.update();
+
         this.playerChar.isGrounded = this.playerChar.body.touching.down;
 
         if(this.playerChar.isGrounded) {
@@ -43,14 +45,14 @@ class play extends Phaser.Scene {
             this.playerChar.setVelocity(0, -250);
             this.sound.play('jump');
             }
-             else if(Phaser.Input.Keyboard.JustDown(keyLEFT)) {
+         /*    else if(Phaser.Input.Keyboard.JustDown(keyLEFT)) {
             this.playerChar.tilePositionX -= 10;
             console.log("left");
         }
             else if(Phaser.Input.Keyboard.JustDown(keyRIGHT)) {
             this.playerChar.tilePositionX += 10;
             console.log("right");
-        }
+        } */
     }
     }
 }
