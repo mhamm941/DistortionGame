@@ -43,7 +43,7 @@
  "tilesets":[
         {
          "firstgid":1,
-         "source":"..\/..\/..\/..\/Desktop\/testingTileSet.tsx"
+         "source":"testingTileSet.tsx"
         }],
  "tilewidth":32,
  "type":"map",

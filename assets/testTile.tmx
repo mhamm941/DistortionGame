@@ -3,7 +3,9 @@
  <editorsettings>
   <export target="testTile.tmx" format="tmx"/>
  </editorsettings>
- <tileset firstgid="1" source="../../../../Desktop/testingTileSet.tsx"/>
+ <tileset firstgid="1" name="testingTileSet" tilewidth="32" tileheight="32" tilecount="32" columns="8">
+  <image source="tileTesting.png" width="256" height="128"/>
+ </tileset>
  <layer id="1" name="backgroud" width="50" height="40">
   <data encoding="csv">
 30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,
