@@ -22,6 +22,7 @@ class play extends Phaser.Scene {
         }
 
         this.background = this.add.tileSprite(0, 0, 850, 600, 'background').setOrigin(0, 0);
+            //change size to test camera pan
 
         this.ground = this.add.tileSprite(0, game.config.height - 100, 850, 100, 'ground').setOrigin(0, 0);
 
