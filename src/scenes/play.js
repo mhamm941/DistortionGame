@@ -46,6 +46,9 @@ class play extends Phaser.Scene {
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
         keySPACE = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
 
+        //keyTEMP = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ESC);
+        
+
         //camera bounds 
         this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
         this.cameras.main.startFollow(this.playerChar, true, 0.25, 0.25);
@@ -64,6 +67,9 @@ class play extends Phaser.Scene {
             this.playerChar.setVelocity(0, -300);
             this.sound.play('jump');
             }
-    }
+        }
+        /*if(Phaser.Input.Keyboard.JustDown(keyTEMP)) {
+            this.scene.start("gameOverScene");
+        }*/
     }
 }

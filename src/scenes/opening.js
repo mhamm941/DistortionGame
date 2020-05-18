@@ -14,7 +14,10 @@ class opening extends Phaser.Scene {
         this.add.text(centerX, centerY, "Arrow keys <- -> to move", {
             fontSize: '20px',
         }).setOrigin(0,0);
-        this.add.text(centerX, centerY + 64, "Space bar to jump",{
+        this.add.text(centerX, centerY + 32, "Space bar to jump",{
+            fontSize: '20px'
+        })
+        this.add.text(centerX, centerY + 64, "ESC to pause",{
             fontSize: '20px'
         })
         this.input.keyboard.on('keydown', () => {
