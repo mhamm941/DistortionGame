@@ -25,12 +25,12 @@ class play extends Phaser.Scene {
         groundLayer.setCollisionByProperty( {collides: true} );
 
         // from nathan's code
-        const debugGraphics = this.add.graphics().setAlpha(0.75);
-        groundLayer.renderDebug(debugGraphics, {
-            tileColor: null,    // color of non-colliding tiles
-            collidingTileColor: new Phaser.Display.Color(243, 134, 48, 255),    // color of colliding tiles
-            faceColor: new Phaser.Display.Color(40, 39, 37, 255)                // color of colliding face edges
-        });
+        // const debugGraphics = this.add.graphics().setAlpha(0.75);
+        // groundLayer.renderDebug(debugGraphics, {
+        //     tileColor: null,    // color of non-colliding tiles
+        //     collidingTileColor: new Phaser.Display.Color(243, 134, 48, 255),    // color of colliding tiles
+        //     faceColor: new Phaser.Display.Color(40, 39, 37, 255)                // color of colliding face edges
+        // });
 
         this.physics.world.bounds.setTo(0, 0, map.widthInPixels, map.heightInPixels);
 
