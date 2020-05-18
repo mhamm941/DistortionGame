@@ -16,10 +16,10 @@ class player extends Phaser.Physics.Arcade.Sprite {
     // TODO change to velocity instead of x position
 
         if(keyLEFT.isDown) {
-            this.x -= 3;
+            this.x -= 5;
         }
             else if(keyRIGHT.isDown) {
-            this.x += 3;
+            this.x += 5;
         }
     }
 }

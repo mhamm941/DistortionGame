@@ -8,8 +8,10 @@ class gameOver extends Phaser.Scene {
 
     create() {
 
-        let centerX = game.config.width/2;
+        let centerX = game.config.width/ 2 - 300;
         let centerY = game.config.height/2;
+
+        this.playRestart = this.scene.get("playScene");
 
         this.add.text(centerX, centerY, "TEMP Game Over", {
             fontSize: '40px',
@@ -22,15 +24,19 @@ class gameOver extends Phaser.Scene {
         })
         keySPACE = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
 
-        keyTEMP = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ESC);
+        keyTEMP = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
+
+    }
+    update() {
         if(Phaser.Input.Keyboard.JustDown(keyTEMP)) {
+            this.playRestart.scene.restart();
             this.scene.start("playScene");
             this.sound.play('select');
         }
-        if(Phaser.Input.Keyboard.JustDown(keySPACE)) {
-            this.scene.start("menuScene");
-            this.sound.play('select');
-        }
+       if(Phaser.Input.Keyboard.JustDown(keySPACE)) {
+           this.scene.start("menuScene");
+           this.sound.play('select');
+       }
     }
 
 }

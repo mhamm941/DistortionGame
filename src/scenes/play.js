@@ -24,13 +24,6 @@ class play extends Phaser.Scene {
 
         groundLayer.setCollisionByProperty( {collides: true} );
 
-        // from nathan's code
-        // const debugGraphics = this.add.graphics().setAlpha(0.75);
-        // groundLayer.renderDebug(debugGraphics, {
-        //     tileColor: null,    // color of non-colliding tiles
-        //     collidingTileColor: new Phaser.Display.Color(243, 134, 48, 255),    // color of colliding tiles
-        //     faceColor: new Phaser.Display.Color(40, 39, 37, 255)                // color of colliding face edges
-        // });
 
         this.physics.world.bounds.setTo(0, 0, map.widthInPixels, map.heightInPixels);
 
@@ -46,7 +39,7 @@ class play extends Phaser.Scene {
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
         keySPACE = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
 
-        //keyTEMP = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ESC);
+        keyTEMP = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
         
 
         //camera bounds 
@@ -64,12 +57,12 @@ class play extends Phaser.Scene {
 
         if(this.playerChar.isGrounded) {
             if (Phaser.Input.Keyboard.JustDown(keySPACE)) {
-            this.playerChar.setVelocity(0, -300);
+            this.playerChar.setVelocity(0, -350);
             this.sound.play('jump');
             }
         }
-        /*if(Phaser.Input.Keyboard.JustDown(keyTEMP)) {
+        if(Phaser.Input.Keyboard.JustDown(keyTEMP)) {
             this.scene.start("gameOverScene");
-        }*/
+        }
     }
 }
