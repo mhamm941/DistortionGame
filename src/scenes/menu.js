@@ -18,7 +18,7 @@ class menu extends Phaser.Scene {
             fontSize: '20px'
         })
         this.input.keyboard.on('keydown', () => {
-            this.scene.start("playScene");
+            this.scene.start("openingScene");
             this.sound.play('select');
         }, this);
     }

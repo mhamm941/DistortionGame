@@ -57,13 +57,13 @@ class play extends Phaser.Scene {
 
         this.playerChar.update();
 
-         this.playerChar.isGrounded = this.playerChar.body.touching.down;
+        this.playerChar.isGrounded = this.playerChar.body.blocked.down;
 
-         if(this.playerChar.isGrounded) {
-             if (Phaser.Input.Keyboard.JustDown(keySPACE)) {
-             this.playerChar.setVelocity(0, -250);
-             this.sound.play('jump');
-             }
+        if(this.playerChar.isGrounded) {
+            if (Phaser.Input.Keyboard.JustDown(keySPACE)) {
+            this.playerChar.setVelocity(0, -300);
+            this.sound.play('jump');
+            }
     }
     }
 }
