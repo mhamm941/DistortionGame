@@ -12,6 +12,9 @@ class player extends Phaser.Physics.Arcade.Sprite {
         this.setScale(0.5);
     }
     update() {
+
+    // TODO change to velocity instead of x position
+
         if(keyLEFT.isDown) {
             this.x -= 3;
         }

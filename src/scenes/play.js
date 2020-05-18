@@ -20,9 +20,18 @@ class play extends Phaser.Scene {
         const tileset = map.addTilesetImage("testingTileSet", "allMapTileSprite");
 
         const backgroundLayer = map.createStaticLayer("background", tileset, 0, 0);
-        const groundLayer = map.createStaticLayer("ground", tileset, 0, 0).setOrigin(0, 0);
+        const groundLayer = map.createStaticLayer("ground", tileset, 0, 0);
 
         groundLayer.setCollisionByProperty( {collides: true} );
+
+        const debugGraphics = this.add.graphics().setAlpha(0.75);
+        groundLayer.renderDebug(debugGraphics, {
+            tileColor: null,    // color of non-colliding tiles
+            collidingTileColor: new Phaser.Display.Color(243, 134, 48, 255),    // color of colliding tiles
+            faceColor: new Phaser.Display.Color(40, 39, 37, 255)                // color of colliding face edges
+        });
+
+        this.physics.world.bounds.setTo(0, 0, map.widthInPixels, map.heightInPixels);
 
         this.playerChar = new player(this, game.config.width/8, game.config.height - 150, 'player');
        // this.playerChar = this.physics.add.sprite(game.config.width/8, game.config.height - 150, 'player');
