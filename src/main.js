@@ -1,6 +1,7 @@
 let config = {
     // parent: 'myGame',
      type: Phaser.WEBGL,
+     pixelArt: true,
      width: 850,
      height: 600,
      physics: {
@@ -21,3 +22,4 @@ let config = {
  let keyLEFT;
  let keyRIGHT;
  let keySPACE;
+ let keyDOWN;

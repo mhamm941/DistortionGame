@@ -5,8 +5,8 @@ class play extends Phaser.Scene {
 
     preload() {
         this.load.image('player', './assets/playerPLACEHOLDER.png');
-        this.load.image('background', './assets/backgroundPLACEHOLDER.png');
-        this.load.image('ground', './assets/groundPLACEHOLDER.png');
+       // this.load.image('background', './assets/backgroundPLACEHOLDER.png');
+       // this.load.image('ground', './assets/groundPLACEHOLDER.png');
 
         this.load.image('allMapTileSprite', './assets/tileTesting.png');
         this.load.tilemapTiledJSON('testMap', './assets/testTile.json');
@@ -17,32 +17,28 @@ class play extends Phaser.Scene {
     create() {
 
         const map = this.add.tilemap("testMap");
-        const tileset = map.addTilesetImage("testingTileSet", "testMap");
+        const tileset = map.addTilesetImage("testingTileSet", "allMapTileSprite");
 
         const backgroundLayer = map.createStaticLayer("background", tileset, 0, 0);
-        const groundLayer = map.createStaticLayer("ground", tileset, 0, 0);
-        
-     /*   this.platform = this.add.group();
-        for(let i = 0; i < game.config.width; i += 32) {
-            let groundTile = this.physics.add.sprite(i, game.config.height - 100).setOrigin(0);
-            groundTile.body.immovable = true;
-            groundTile.body.allowGravity = false;
-            this.platform.add(groundTile);
-        }*/
+        const groundLayer = map.createStaticLayer("ground", tileset, 0, 0).setOrigin(0, 0);
 
-       // this.background = this.add.tileSprite(0, 0, 850, 600, 'background').setOrigin(0, 0);
-            //change size to test camera pan
+        groundLayer.setCollisionByProperty( {collides: true} );
 
-        //this.ground = this.add.tileSprite(0, game.config.height - 100, 850, 100, 'ground').setOrigin(0, 0);
+        this.playerChar = new player(this, game.config.width/8, game.config.height - 150, 'player');
+       // this.playerChar = this.physics.add.sprite(game.config.width/8, game.config.height - 150, 'player');
+        this.playerChar.setGravityY(300);
+        this.playerChar.setCollideWorldBounds(true);
 
-      //  this.playerChar = new player(this, game.config.width/8, game.config.height - 150, 'player');
-      //  this.playerChar.setGravityY(300);
+        this.physics.add.collider(this.playerChar, groundLayer);
 
-       // this.physics.add.collider(this.playerChar, this.platform);
 
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
         keySPACE = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+
+        //camera bounds 
+        this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
+        this.cameras.main.startFollow(this.playerChar, true, 0.25, 0.25);
     }
 
     update() {
@@ -51,13 +47,13 @@ class play extends Phaser.Scene {
 
         this.playerChar.update();
 
-        this.playerChar.isGrounded = this.playerChar.body.touching.down;
+         this.playerChar.isGrounded = this.playerChar.body.touching.down;
 
-        if(this.playerChar.isGrounded) {
-            if (Phaser.Input.Keyboard.JustDown(keySPACE)) {
-            this.playerChar.setVelocity(0, -250);
-            this.sound.play('jump');
-            }
+         if(this.playerChar.isGrounded) {
+             if (Phaser.Input.Keyboard.JustDown(keySPACE)) {
+             this.playerChar.setVelocity(0, -250);
+             this.sound.play('jump');
+             }
     }
     }
 }
