@@ -24,6 +24,7 @@ class play extends Phaser.Scene {
 
         groundLayer.setCollisionByProperty( {collides: true} );
 
+        // from nathan's code
         const debugGraphics = this.add.graphics().setAlpha(0.75);
         groundLayer.renderDebug(debugGraphics, {
             tileColor: null,    // color of non-colliding tiles
