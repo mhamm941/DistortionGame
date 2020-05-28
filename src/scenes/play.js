@@ -5,8 +5,7 @@ class play extends Phaser.Scene {
 
     preload() {
         this.load.image('player', './assets/playerPLACEHOLDER.png');
-       // this.load.image('background', './assets/backgroundPLACEHOLDER.png');
-       // this.load.image('ground', './assets/groundPLACEHOLDER.png');
+       this.load.image('block', './assets/block.png');
 
         this.load.image('allMapTileSprite', './assets/tileTesting.png');
         this.load.tilemapTiledJSON('testMap', './assets/testTile.json');
@@ -22,8 +21,11 @@ class play extends Phaser.Scene {
         const backgroundLayer = map.createStaticLayer("background", tileset, 0, 0);
         const groundLayer = map.createStaticLayer("ground", tileset, 0, 0);
 
+        const doorLayer = map.createStaticLayer("door", tileset, 0, 0);
+
         groundLayer.setCollisionByProperty( {collides: true} );
 
+        doorLayer.setCollisionByProperty( {collides: true} );
 
         this.physics.world.bounds.setTo(0, 0, map.widthInPixels, map.heightInPixels);
 
@@ -34,6 +36,10 @@ class play extends Phaser.Scene {
 
         this.physics.add.collider(this.playerChar, groundLayer);
 
+        this.block = new obstacle(this, 100, 100, 'block');
+
+        this.physics.add.collider(this.playerChar, this.block);
+        this.physics.add.collider(this.block, groundLayer);
 
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
@@ -48,8 +54,6 @@ class play extends Phaser.Scene {
     }
 
     update() {
-
-        //this.background.tilePositionX += 2;
 
         this.playerChar.update();
 

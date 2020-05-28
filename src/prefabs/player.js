@@ -8,18 +8,16 @@ class player extends Phaser.Physics.Arcade.Sprite {
         
         //setting gravity
         this.setGravityY(400);
-        //this.setDragX(50);
+        this.setDragX(2000);
         this.setScale(0.5);
     }
     update() {
 
-    // TODO change to velocity instead of x position
-
         if(keyLEFT.isDown) {
-            this.x -= 5;
+            this.setVelocityX(-200);
         }
             else if(keyRIGHT.isDown) {
-            this.x += 5;
+                this.setVelocityX(200);
         }
     }
 }
