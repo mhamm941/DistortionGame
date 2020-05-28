@@ -23,24 +23,26 @@ class play2 extends Phaser.Scene {
 
         const doorLayer = map.createStaticLayer("door", tileset, 0, 0);
 
+        const playerSpawn = map.findObject("objects", obj => obj.name === "player spawn");
+
         groundLayer.setCollisionByProperty( {collides: true} );
 
-        doorLayer.setCollisionByProperty( {collides: true} );
+        doorLayer.setCollisionByProperty( {door: true} );
 
         this.physics.world.bounds.setTo(0, 0, map.widthInPixels, map.heightInPixels);
 
-        this.playerChar = new player(this, game.config.width/8, game.config.height - 150, 'player');
+        this.playerChar = new player(this, playerSpawn.x, playerSpawn.y, 'player');
        // this.playerChar = this.physics.add.sprite(game.config.width/8, game.config.height - 150, 'player');
         this.playerChar.setGravityY(300);
         this.playerChar.setCollideWorldBounds(true);
 
         this.physics.add.collider(this.playerChar, groundLayer);
 
-        this.block = new obstacle(this, 100, 100, 'block');
+     //   this.block = new obstacle(this, 100, 100, 'block');
 
-        this.physics.add.collider(this.playerChar, this.block);
-        this.physics.add.collider(this.block, groundLayer);
-       // this.physics.add.collider(this.playerChar, doorLayer);
+     //   this.physics.add.collider(this.playerChar, this.block);
+     //   this.physics.add.collider(this.block, groundLayer);
+     //   this.physics.add.collider(this.playerChar, doorLayer);
 
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
