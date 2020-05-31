@@ -61,6 +61,12 @@ class play4 extends Phaser.Scene {
             this.introDia = this.add.text(this.playerChar.x, this.playerChar.y - 100, "asdkjab jakdsda efwtw rsvs wasd swewf hkjgsab", {
                 fontSize: '30px',
             }).setOrigin(0);
+            this.introDia = this.add.text(this.playerChar.x, this.playerChar.y - 150, "asdk jab jasda ty rs gs  ab", {
+                fontSize: '40px',
+            }).setOrigin(0);
+            this.introDia = this.add.text(this.playerChar.x, this.playerChar.y - 120, "atyjned yrjr sgds yhrt rew", {
+                fontSize: '60px',
+            }).setOrigin(0);
         
     }
 
