@@ -10,12 +10,16 @@ class play extends Phaser.Scene {
         this.load.image('allMapTileSprite', './assets/tileTesting.png');
         this.load.tilemapTiledJSON('platformerMap', './assets/map2.json');
 
+        this.load.image('dialogBox', './assets/dialogBox.png');
+
         this.load.audio('jump', './assets/jump.wav');
         this.load.audio('hurt', './assets/hurt.wav');
-        this.load.audio('mainTheme', './assests/stMAIN.wav');
+        
     }
 
     create() {
+
+        this.dialogBox = this.add.sprite(5, 440, 'dialogBox').setOrigin(0);
 
         const map = this.add.tilemap("platformerMap");
         const tileset = map.addTilesetImage("tileTesting", "allMapTileSprite");
@@ -82,5 +86,6 @@ class play extends Phaser.Scene {
 
     check() {
         this.scene.start('play2Scene');
+        this.sound.play('hurt');
     }
 }

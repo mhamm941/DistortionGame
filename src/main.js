@@ -14,7 +14,7 @@ let config = {
             }
         }
     },
-    scene: [ menu, opening, play, play2, gameOver]
+    scene: [ music, menu, opening, play, play2, gameOver]
 };
 
 let game = new Phaser.Game(config);
