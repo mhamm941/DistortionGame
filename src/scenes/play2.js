@@ -5,29 +5,31 @@ class play2 extends Phaser.Scene {
 
     preload() {
         this.load.image('player', './assets/playerPLACEHOLDER.png');
-       this.load.image('block', './assets/block.png');
 
         this.load.image('allMapTileSprite', './assets/tileTesting.png');
-        this.load.tilemapTiledJSON('testMap', './assets/testTile.json');
+        this.load.tilemapTiledJSON('platformerMap', './assets/map2.json');
 
         this.load.audio('jump', './assets/jump.wav');
     }
 
     create() {
 
-        const map = this.add.tilemap("testMap");
-        const tileset = map.addTilesetImage("testingTileSet", "allMapTileSprite");
+        const map = this.add.tilemap("platformerMap");
+        const tileset = map.addTilesetImage("tileTesting", "allMapTileSprite");
 
         const backgroundLayer = map.createStaticLayer("background", tileset, 0, 0);
         const groundLayer = map.createStaticLayer("ground", tileset, 0, 0);
-
-        const doorLayer = map.createStaticLayer("door", tileset, 0, 0);
+        const spikeLayer = map.createStaticLayer("spikes", tileset, 0, 0);
 
         const playerSpawn = map.findObject("objects", obj => obj.name === "player spawn");
+
+        const doorLayer = map.createStaticLayer("door", tileset, 0, 0);
 
         groundLayer.setCollisionByProperty( {collides: true} );
 
         doorLayer.setCollisionByProperty( {door: true} );
+
+        spikeLayer.setCollisionByProperty( {collides: true} );
 
         this.physics.world.bounds.setTo(0, 0, map.widthInPixels, map.heightInPixels);
 
@@ -38,18 +40,15 @@ class play2 extends Phaser.Scene {
 
         this.physics.add.collider(this.playerChar, groundLayer);
 
-     //   this.block = new obstacle(this, 100, 100, 'block');
+       // this.physics.add.collider(this.playerChar, doorLayer);
 
-     //   this.physics.add.collider(this.playerChar, this.block);
-     //   this.physics.add.collider(this.block, groundLayer);
-     //   this.physics.add.collider(this.playerChar, doorLayer);
+       this.physics.add.collider(spikeLayer, this.playerChar, this.check, null, this);
 
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
         keySPACE = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
 
         keyTEMP = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
-        
 
         //camera bounds 
         this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
@@ -71,5 +70,9 @@ class play2 extends Phaser.Scene {
         if(Phaser.Input.Keyboard.JustDown(keyTEMP)) {
             this.scene.start("gameOverScene");
         }
+    }
+
+    check() {
+        //this.scene.start('play2Scene');
     }
 }

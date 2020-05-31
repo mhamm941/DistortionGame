@@ -8,21 +8,24 @@ class play extends Phaser.Scene {
        this.load.image('block', './assets/block.png');
 
         this.load.image('allMapTileSprite', './assets/tileTesting.png');
-        this.load.tilemapTiledJSON('testMap', './assets/testTile.json');
+        this.load.tilemapTiledJSON('platformerMap', './assets/map2.json');
 
         this.load.audio('jump', './assets/jump.wav');
+        this.load.audio('hurt', './assets/hurt.wav');
+        this.load.audio('mainTheme', './assests/stMAIN.wav');
     }
 
     create() {
 
-        const map = this.add.tilemap("testMap");
-        const tileset = map.addTilesetImage("testingTileSet", "allMapTileSprite");
+        const map = this.add.tilemap("platformerMap");
+        const tileset = map.addTilesetImage("tileTesting", "allMapTileSprite");
 
         const backgroundLayer = map.createStaticLayer("background", tileset, 0, 0);
         const groundLayer = map.createStaticLayer("ground", tileset, 0, 0);
         const spikeLayer = map.createStaticLayer("spikes", tileset, 0, 0);
 
         const playerSpawn = map.findObject("objects", obj => obj.name === "player spawn");
+        const blockSpawn = map.findObject("objects", obj => obj.name === "block spawn");
 
         const doorLayer = map.createStaticLayer("door", tileset, 0, 0);
 
@@ -41,7 +44,7 @@ class play extends Phaser.Scene {
 
         this.physics.add.collider(this.playerChar, groundLayer);
 
-        this.block = new obstacle(this, 100, 100, 'block');
+        this.block = new obstacle(this, blockSpawn.x, blockSpawn.y, 'block');
 
         this.physics.add.collider(this.playerChar, this.block);
         this.physics.add.collider(this.block, groundLayer);
