@@ -14,8 +14,9 @@ let config = {
             }
         }
     },
-    scene: [ music, menu, opening, play, play2, gameOver]
+    scene: [ music, menu, opening, play, play2, play3, gameOver]
 };
+
 
 let game = new Phaser.Game(config);
 
@@ -24,3 +25,9 @@ let keyRIGHT;
 let keySPACE;
 let keyDOWN;
 let keyTEMP;
+let keyN;
+let keyM;
+
+let counterRestart = 0;
+
+let playerX, playerY;

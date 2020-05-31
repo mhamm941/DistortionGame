@@ -2,6 +2,7 @@ class play extends Phaser.Scene {
     constructor() {
         super("playScene");
     }
+    
 
     preload() {
         this.load.image('player', './assets/playerPLACEHOLDER.png');
@@ -19,7 +20,7 @@ class play extends Phaser.Scene {
 
     create() {
 
-        this.dialogBox = this.add.sprite(5, 440, 'dialogBox').setOrigin(0);
+        this.counter = 0;
 
         const map = this.add.tilemap("platformerMap");
         const tileset = map.addTilesetImage("tileTesting", "allMapTileSprite");
@@ -32,6 +33,8 @@ class play extends Phaser.Scene {
         const blockSpawn = map.findObject("objects", obj => obj.name === "block spawn");
 
         const doorLayer = map.createStaticLayer("door", tileset, 0, 0);
+
+        this.narrator = null;
 
         groundLayer.setCollisionByProperty( {collides: true} );
 
@@ -62,9 +65,15 @@ class play extends Phaser.Scene {
 
         keyTEMP = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
 
+        keyN = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.N);
+        keyM = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.M);
+
         //camera bounds 
         this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
         this.cameras.main.startFollow(this.playerChar, true, 0.25, 0.25);
+
+        this.introDia = this.add.text(this.playerChar.x, this.playerChar.y - 100, "Welcome friend! I'm here to help you through the game [N]").setOrigin(0);
+
     }
 
     update() {
@@ -82,6 +91,36 @@ class play extends Phaser.Scene {
         if(Phaser.Input.Keyboard.JustDown(keyTEMP)) {
             this.scene.start("gameOverScene");
         }
+
+        if( this.counter == 0 && Phaser.Input.Keyboard.JustDown(keyN)){
+            this.introDia.destroy();
+            this.introDia2 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 100, "To move use <- and ->. To jump you use spacebar! [N]").setOrigin(0);
+            this.counter++;
+            console.log(this.counter);
+        }
+
+        if( this.counter == 1 && Phaser.Input.Keyboard.JustDown(keyN)){
+                this.introDia2.destroy();
+                this.introDia3 = this.add.text(this.playerChar.x - 200, this.playerChar.y - 150, "You can interact with anything that's outlined in red.").setOrigin(0);
+                this.introDia3line = this.add.text(this.playerChar.x - 200, this.playerChar.y - 100, "Push the block ober there!").setOrigin(0);
+                this.counter++;
+                console.log(this.counter);
+            }
+
+        if(this.counter == 2 && this.block.x >= 1280){
+            this.introDia3.destroy();
+            this.introDia3line.destroy();
+            this.introDia4 = this.add.text(this.playerChar.x - 200, this.playerChar.y - 100, "Great job! Now try climbing those platforms.").setOrigin(0);
+            this.counter++;
+        }
+
+        if(this.counter == 3 && this.playerChar.x >= 2160 && this.playerChar.y <= 303){
+            this.introDia4.destroy();
+            this.introDia5 = this.add.text(this.playerChar.x - 200, this.playerChar.y - 150, "The exit door is just right there!").setOrigin(0);
+            this.introDia5line = this.add.text(this.playerChar.x - 200, this.playerChar.y - 100, "Take a big jump and take the exit!").setOrigin(0);
+            this.counter++;
+        }
+
     }
 
     check() {

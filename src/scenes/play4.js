@@ -1,6 +1,6 @@
-class play2 extends Phaser.Scene {
+class play4 extends Phaser.Scene {
     constructor() {
-        super("play2Scene");
+        super("play4Scene");
     }
 
     preload() {
@@ -10,12 +10,9 @@ class play2 extends Phaser.Scene {
         this.load.tilemapTiledJSON('platformerMap', './assets/map3.json');
 
         this.load.audio('jump', './assets/jump.wav');
-        this.load.audio('hurt', './assets/hurt.wav');
     }
 
     create() {
-
-        //this.playRestart = this.scene.get("play2Scene");
 
         this.counter = 0;
 
@@ -45,7 +42,7 @@ class play2 extends Phaser.Scene {
 
         this.physics.add.collider(this.playerChar, groundLayer);
 
-        this.physics.add.collider(doorLayer, this.playerChar, this.checkDoor, null, this);
+       // this.physics.add.collider(doorLayer, this.playerChar, this.checkDoor, null, this);
 
         this.physics.add.collider(spikeLayer, this.playerChar, this.check, null, this);
 
@@ -59,7 +56,12 @@ class play2 extends Phaser.Scene {
         this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
         this.cameras.main.startFollow(this.playerChar, true, 0.25, 0.25);
 
-        this.introDia = this.add.text(this.playerChar.x, this.playerChar.y - 100, "Extremely unfortunate, but you can try again!").setOrigin(0);
+
+
+            this.introDia = this.add.text(this.playerChar.x, this.playerChar.y - 100, "asdkjab jakdsda efwtw rsvs wasd swewf hkjgsab", {
+                fontSize: '30px',
+            }).setOrigin(0);
+        
     }
 
     update() {
@@ -78,20 +80,16 @@ class play2 extends Phaser.Scene {
             this.scene.start("gameOverScene");
         }
 
-        if(this.counter == 0 && this.playerChar.x >= 2160 && this.playerChar.y <= 303){
-            this.introDia5 = this.add.text(this.playerChar.x - 200, this.playerChar.y - 150, "Almost there!").setOrigin(0);
-            this.introDia5line = this.add.text(this.playerChar.x - 200, this.playerChar.y - 100, "I even made it easier for you").setOrigin(0);
-            this.counter++;
+        if(this.counter == 0 && counterRestart == 0 && this.playerChar.x >= 2160 && this.playerChar.y <= 303){
+            this.introDia = this.add.text(this.playerChar.x, this.playerChar.y - 100, "asdkjab ja kdsda efwtw rsvs wasd swewf hkjgsab", {
+                fontSize: '30px',
+            }).setOrigin(0);
         }
-
     }
 
     check() {
-        this.scene.start("play3Scene");
-    }
 
-  //  checkDoor(){
-   //     this.scene.start('play2Scene');
-   // }
+         this.scene.start('gameOverScene')
+     }
 
 }

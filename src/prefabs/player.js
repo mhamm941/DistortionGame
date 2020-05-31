@@ -19,5 +19,6 @@ class player extends Phaser.Physics.Arcade.Sprite {
             else if(keyRIGHT.isDown) {
                 this.setVelocityX(300);
         }
+
     }
 }

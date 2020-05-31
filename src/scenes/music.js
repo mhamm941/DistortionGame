@@ -9,7 +9,7 @@ class music extends Phaser.Scene {
         let mainTheme = this.sound.add('mainTheme');
         mainTheme.play({
             loop: true,
-            volume: .30,
+            volume: .15,
         });
         this.scene.start("menuScene");
     }
