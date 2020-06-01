@@ -1,5 +1,4 @@
 let config = {
-// parent: 'myGame',
     type: Phaser.WEBGL,
     pixelArt: true,
     width: 850,
@@ -7,7 +6,7 @@ let config = {
     physics: {
         default: 'arcade',
         arcade: {
-            debug: true,
+            debug: false,
             gravity: {
                 x: 0,
                 y: 0
@@ -26,8 +25,5 @@ let keySPACE;
 let keyDOWN;
 let keyTEMP;
 let keyN;
-let keyM;
-
-let counterRestart = 0;
 
 let playerX, playerY;

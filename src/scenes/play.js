@@ -5,7 +5,7 @@ class play extends Phaser.Scene {
     
 
     preload() {
-        this.load.image('player', './assets/playerPLACEHOLDER.png');
+        this.load.image('player', './assets/player.png');
        this.load.image('block', './assets/block.png');
 
         this.load.image('allMapTileSprite', './assets/tileTesting.png');
@@ -102,7 +102,7 @@ class play extends Phaser.Scene {
         if( this.counter == 1 && Phaser.Input.Keyboard.JustDown(keyN)){
                 this.introDia2.destroy();
                 this.introDia3 = this.add.text(this.playerChar.x - 200, this.playerChar.y - 150, "You can interact with anything that's outlined in red.").setOrigin(0);
-                this.introDia3line = this.add.text(this.playerChar.x - 200, this.playerChar.y - 100, "Push the block ober there!").setOrigin(0);
+                this.introDia3line = this.add.text(this.playerChar.x - 200, this.playerChar.y - 100, "Push the block over there!").setOrigin(0);
                 this.counter++;
                 console.log(this.counter);
             }

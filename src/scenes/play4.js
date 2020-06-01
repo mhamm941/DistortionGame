@@ -4,7 +4,7 @@ class play4 extends Phaser.Scene {
     }
 
     preload() {
-        this.load.image('player', './assets/playerPLACEHOLDER.png');
+        this.load.image('player', './assets/player.png');
 
         this.load.image('allMapTileSprite', './assets/tileTesting.png');
         this.load.tilemapTiledJSON('platformerMap', './assets/map3.json');
@@ -86,7 +86,9 @@ class play4 extends Phaser.Scene {
             this.scene.start("gameOverScene");
         }
 
-        if(this.counter == 0 && counterRestart == 0 && this.playerChar.x >= 2160 && this.playerChar.y <= 303){
+        
+
+        if(this.counter == 1 && counterRestart == 0 && this.playerChar.x >= 2160 && this.playerChar.y <= 303){
             this.introDia = this.add.text(this.playerChar.x, this.playerChar.y - 100, "asdkjab ja kdsda efwtw rsvs wasd swewf hkjgsab", {
                 fontSize: '30px',
             }).setOrigin(0);
