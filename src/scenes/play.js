@@ -6,7 +6,7 @@ class play extends Phaser.Scene {
 
     preload() {
         this.load.image('player', './assets/player.png');
-       this.load.image('block', './assets/block.png');
+        this.load.image('block', './assets/block.png');
 
         this.load.image('allMapTileSprite', './assets/tileTesting.png');
         this.load.tilemapTiledJSON('platformerMap', './assets/map2.json');

@@ -25,5 +25,6 @@ let keySPACE;
 let keyDOWN;
 let keyTEMP;
 let keyN;
+let keyM;
 
 let playerX, playerY;
