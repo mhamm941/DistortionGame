@@ -18,6 +18,9 @@ class play3 extends Phaser.Scene {
 
         this.counter = 0;
 
+        //music.mainTheme.setMute(true);
+        //music.distTheme1.setMute(false);
+
         const map = this.add.tilemap("platformerMap");
         const tileset = map.addTilesetImage("tileTesting", "allMapTileSprite");
 
@@ -100,5 +103,4 @@ class play3 extends Phaser.Scene {
     // checkDoor(){
          this.scene.start('play4Scene')
      }
-
 }

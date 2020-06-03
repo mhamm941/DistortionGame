@@ -5,27 +5,30 @@ class music extends Phaser.Scene {
     preload() {
         this.load.audio('mainTheme', './assets/stMAIN.wav');
         this.load.audio('distTheme1', './assets/stDIST.wav');
-        this.load.audio('distTheme2', './assets/stDEEP.wav')
+        this.load.audio('distTheme2', './assets/stDEEP.wav');
     }
     create() {
-        let mainTheme = this.sound.add('mainTheme');
-        let distTheme1 = this.sound.add('distTheme1');
-        let distTheme2 = this.sound.add('distTheme2');
+        var mainTheme = this.sound.add('mainTheme');
+        var distTheme1 = this.sound.add('distTheme1');
+        var distTheme2 = this.sound.add('distTheme2');
 
         mainTheme.play({
             loop: true,
             volume: .15,
+            mute: false,
         });
 
         distTheme1.play({
             loop: true,
-            volume: 0,
-        })
+            volume: .15,
+            mute: true,
+        });
         
         distTheme2.play({
             loop: true,
-            volume: 0,
-        })
+            volume: .15,
+            mute: true,
+        });
 
         this.scene.start("menuScene");
     }
