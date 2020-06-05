@@ -19,6 +19,10 @@ let config = {
 
 let game = new Phaser.Game(config);
 
+let mainTheme;
+let distTheme1;
+let distTheme2;
+
 let keyLEFT;
 let keyRIGHT;
 let keySPACE;

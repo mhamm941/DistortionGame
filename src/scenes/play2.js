@@ -19,8 +19,8 @@ class play2 extends Phaser.Scene {
 
         this.counter = 0;
 
-        //music.mainTheme.setMute(true);
-        //music.distTheme1.setMute(false);
+        //mainTheme.setMute(true);
+        //distTheme1.setMute(false);
 
         const map = this.add.tilemap("platformerMap");
         const tileset = map.addTilesetImage("tileTesting", "allMapTileSprite");

@@ -8,9 +8,9 @@ class music extends Phaser.Scene {
         this.load.audio('distTheme2', './assets/stDEEP.wav');
     }
     create() {
-        var mainTheme = this.sound.add('mainTheme');
-        var distTheme1 = this.sound.add('distTheme1');
-        var distTheme2 = this.sound.add('distTheme2');
+        mainTheme = this.sound.add('mainTheme');
+        distTheme1 = this.sound.add('distTheme1');
+        distTheme2 = this.sound.add('distTheme2');
 
         mainTheme.play({
             loop: true,
@@ -20,13 +20,13 @@ class music extends Phaser.Scene {
 
         distTheme1.play({
             loop: true,
-            volume: .15,
+            volume: .25,
             mute: true,
         });
         
         distTheme2.play({
             loop: true,
-            volume: .15,
+            volume: .35,
             mute: true,
         });
 
