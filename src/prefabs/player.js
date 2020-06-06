@@ -20,5 +20,7 @@ class player extends Phaser.Physics.Arcade.Sprite {
                 this.setVelocityX(300);
         }
 
+        console.log("x: " + this.x + " ,y: "+ this.y);
+
     }
 }

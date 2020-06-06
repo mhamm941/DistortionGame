@@ -5,9 +5,10 @@ class play2 extends Phaser.Scene {
 
     preload() {
         this.load.image('player', './assets/player.png');
+        this.load.image('flower', './assets/theRose.png');
 
         this.load.image('allMapTileSprite', './assets/tileTesting.png');
-        this.load.tilemapTiledJSON('platformerMap2', './assets/map3.json');
+        this.load.tilemapTiledJSON('platformerMap2', './assets/map2_1.json');
 
         this.load.audio('jump', './assets/jump.wav');
         this.load.audio('hurt', './assets/hurt.wav');
@@ -30,12 +31,13 @@ class play2 extends Phaser.Scene {
         const spikeLayer = map.createStaticLayer("spikes", tileset, 0, 0);
 
         const playerSpawn = map.findObject("objects", obj => obj.name === "player spawn");
+        const flowerSpawn = map.findObject("objects", obj => obj.name === "flower spawn");
 
-        const doorLayer = map.createStaticLayer("door", tileset, 0, 0);
+        //const doorLayer = map.createStaticLayer("door", tileset, 0, 0);
 
         groundLayer.setCollisionByProperty( {collides: true} );
 
-        doorLayer.setCollisionByProperty( {door: true} );
+        //doorLayer.setCollisionByProperty( {door: true} );
 
         spikeLayer.setCollisionByProperty( {collides: true} );
 
@@ -48,9 +50,17 @@ class play2 extends Phaser.Scene {
 
         this.physics.add.collider(this.playerChar, groundLayer);
 
-        this.physics.add.collider(doorLayer, this.playerChar, this.checkDoor, null, this);
+       // this.physics.add.collider(doorLayer, this.playerChar, this.checkDoor, null, this);
 
         this.physics.add.collider(spikeLayer, this.playerChar, this.check, null, this);
+
+        this.flower = new obstacle(this, flowerSpawn.x, flowerSpawn.y, 'flower');
+
+        this.flower.setImmovable();
+
+        this.physics.add.overlap(this.playerChar, this.flower, this.checkFlower, null, this);
+
+        this.physics.add.collider(this.flower, groundLayer);
 
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
@@ -62,7 +72,8 @@ class play2 extends Phaser.Scene {
         this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
         this.cameras.main.startFollow(this.playerChar, true, 0.25, 0.25);
 
-        this.introDia = this.add.text(this.playerChar.x, this.playerChar.y - 100, "Extremely unfortunate, but you can try again!").setOrigin(0);
+        this.introDia = this.add.text(this.playerChar.x, this.playerChar.y - 150, "Oh, how unfortunate that was!").setOrigin(0);
+        this.introDia_2 = this.add.text(this.playerChar.x, this.playerChar.y - 100, "I am so sorry you had to go through that. Try again, friend!").setOrigin(0);
     }
 
     update() {
@@ -81,9 +92,10 @@ class play2 extends Phaser.Scene {
             this.scene.start("gameOverScene");
         }
 
-        if(this.counter == 0 && this.playerChar.x >= 2160 && this.playerChar.y <= 303){
-            this.introDia5 = this.add.text(this.playerChar.x - 200, this.playerChar.y - 150, "Almost there!").setOrigin(0);
-            this.introDia5line = this.add.text(this.playerChar.x - 200, this.playerChar.y - 100, "I even made it easier for you").setOrigin(0);
+        if(this.counter == 0 && this.playerChar.x >= 1388 && this.playerChar.y >= 1378){
+            this.introDia.destroy();
+            this.introDia_2.destroy();
+            this.introDia2 = this.add.text(this.playerChar.x - 200, this.playerChar.y - 150, "Just up those platforms, like before…").setOrigin(0);
             this.counter++;
         }
 
@@ -91,10 +103,18 @@ class play2 extends Phaser.Scene {
 
     check() {
         this.scene.start("play3Scene");
+        this.sound.play('hurt');
     }
 
-  //  checkDoor(){
-   //     this.scene.start('play2Scene');
-   // }
+    checkFlower(){
+
+            this.flower.destroy();
+            this.diaFlower2 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "Oh! What a nice flower you got there.").setOrigin(0);
+            this.counterFlower++;
+
+        if(this.counterFlower++ == 1 && Phaser.Input.Keyboard.JustDown(keyN)){
+            this.diaFlower2.destroy();
+        }
+    }
 
 }

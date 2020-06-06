@@ -34,8 +34,6 @@ class play extends Phaser.Scene {
 
         const doorLayer = map.createStaticLayer("door", tileset, 0, 0);
 
-        this.narrator = null;
-
         groundLayer.setCollisionByProperty( {collides: true} );
 
         doorLayer.setCollisionByProperty( {door: true} );
@@ -142,7 +140,7 @@ class play extends Phaser.Scene {
         this.counter++;
     }
 
-    if(this.counter == 6 && this.playerChar.x > 2160 && this.playerChar.y < 303){
+    if(this.counter == 6 && this.playerChar.x >= 2160 && this.playerChar.y <= 303){
         this.introDia7.destroy();
         this.introDia8 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 100, "Great job! Now, trust me, the exit door is just one big ").setOrigin(0);
         this.introDia8_1 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 100, "jump away, so take a big running start and - fly!").setOrigin(0);
