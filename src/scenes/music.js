@@ -14,19 +14,19 @@ class music extends Phaser.Scene {
 
         mainTheme.play({
             loop: true,
-            volume: .15,
+            volume: .05,
             mute: false,
         });
 
         distTheme1.play({
             loop: true,
-            volume: .25,
+            volume: .05,
             mute: true,
         });
         
         distTheme2.play({
             loop: true,
-            volume: .35,
+            volume: .05,
             mute: true,
         });
 

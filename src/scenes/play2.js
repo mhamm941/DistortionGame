@@ -7,7 +7,7 @@ class play2 extends Phaser.Scene {
         this.load.image('player', './assets/player.png');
 
         this.load.image('allMapTileSprite', './assets/tileTesting.png');
-        this.load.tilemapTiledJSON('platformerMap', './assets/map3.json');
+        this.load.tilemapTiledJSON('platformerMap2', './assets/map3.json');
 
         this.load.audio('jump', './assets/jump.wav');
         this.load.audio('hurt', './assets/hurt.wav');
@@ -22,7 +22,7 @@ class play2 extends Phaser.Scene {
         //mainTheme.setMute(true);
         //distTheme1.setMute(false);
 
-        const map = this.add.tilemap("platformerMap");
+        const map = this.add.tilemap("platformerMap2");
         const tileset = map.addTilesetImage("tileTesting", "allMapTileSprite");
 
         const backgroundLayer = map.createStaticLayer("background", tileset, 0, 0);
