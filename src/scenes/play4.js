@@ -45,7 +45,7 @@ class play4 extends Phaser.Scene {
 
         this.physics.add.collider(this.playerChar, groundLayer);
 
-       // this.physics.add.collider(doorLayer, this.playerChar, this.checkDoor, null, this);
+        this.physics.add.collider(doorLayer, this.playerChar, this.checkDoor, null, this);
 
         this.physics.add.collider(spikeLayer, this.playerChar, this.check, null, this);
 
@@ -93,5 +93,9 @@ class play4 extends Phaser.Scene {
 
          this.scene.start('gameOverScene')
      }
+
+     checkDoor(){
+        this.scene.start('play5Scene');
+    }
 
 }
