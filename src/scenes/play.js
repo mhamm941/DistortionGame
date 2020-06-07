@@ -72,7 +72,7 @@ class play extends Phaser.Scene {
         this.cameras.main.roundPixels = true;
         
 
-        this.introDia = this.add.text(this.playerChar.x, this.playerChar.y - 100, "Welcome, my… Friend! [Press N to proceed]", {fontFamily: 'Carrera',}).setOrigin(0);
+        this.introDia = this.add.text(this.playerChar.x, this.playerChar.y - 100, "Welcome, my… Friend! [Press N to proceed]").setOrigin(0);
 
     }
 
@@ -98,8 +98,8 @@ class play extends Phaser.Scene {
 
         if( this.counter == 0 && Phaser.Input.Keyboard.JustDown(keyN)){
             this.introDia.destroy();
-            this.introDia2 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "This is a puzzle environment designed by yours truly!", {fontFamily: 'Carrera',}).setOrigin(0);
-            this.introDia2_1 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 100, "Hope you like it! [N]", {fontFamily: 'Carrera',}).setOrigin(0);
+            this.introDia2 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "This is a puzzle environment designed by yours truly!").setOrigin(0);
+            this.introDia2_1 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 100, "Hope you like it! [N]").setOrigin(0);
             this.counter++;
             console.log(this.counter);
         }
@@ -107,8 +107,8 @@ class play extends Phaser.Scene {
         if( this.counter == 1 && Phaser.Input.Keyboard.JustDown(keyN)){
             this.introDia2.destroy();
             this.introDia2_1.destroy();
-            this.introDia3 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "Who am I? No matter.", {fontFamily: 'Carrera',}).setOrigin(0);
-            this.introDia3line = this.add.text(this.playerChar.x - 100, this.playerChar.y - 100, "Think of me as your companion that’s here to help! [N]", {fontFamily: 'Carrera',}).setOrigin(0);
+            this.introDia3 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "Who am I? No matter.").setOrigin(0);
+            this.introDia3line = this.add.text(this.playerChar.x - 100, this.playerChar.y - 100, "Think of me as your companion that’s here to help! [N]").setOrigin(0);
             this.counter++;
             console.log(this.counter);
         }
@@ -116,9 +116,9 @@ class play extends Phaser.Scene {
     if(this.counter == 2 && Phaser.Input.Keyboard.JustDown(keyN)){
         this.introDia3.destroy();
         this.introDia3line.destroy();
-        this.introDia4 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "It brings me immense joy to observe progress and learning.", {fontFamily: 'Carrera',})
+        this.introDia4 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "It brings me immense joy to observe progress and learning.")
         .setOrigin(0);
-        this.introDia4_1 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 100, "So please, go ahead and solve this puzzle for me! [N]", {fontFamily: 'Carrera',})
+        this.introDia4_1 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 100, "So please, go ahead and solve this puzzle for me! [N]")
         .setOrigin(0);
         this.counter++;
     }
@@ -126,30 +126,30 @@ class play extends Phaser.Scene {
     if(this.counter == 3 && Phaser.Input.Keyboard.JustDown(keyN)){
         this.introDia4.destroy();
         this.introDia4_1.destroy();
-        this.introDia5 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "See the red cube in front over there? ", {fontFamily: 'Carrera',}).setOrigin(0);
-        this.introDia5_1 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 100, "Try giving it a friendly push!", {fontFamily: 'Carrera',}).setOrigin(0);
+        this.introDia5 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "See the red cube in front over there? ").setOrigin(0);
+        this.introDia5_1 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 100, "Try giving it a friendly push!").setOrigin(0);
         this.counter++;
     }
 
     if(this.counter == 4 && this.block.x >= 1280){
         this.introDia5.destroy();
         this.introDia5_1.destroy();
-        this.introDia6 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "Marvelous! This, my friend, is how you", {fontFamily: 'Carrera',}).setOrigin(0);
-        this.introDia6_1 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 100, "can interact with any object highlighted in red! [N]", {fontFamily: 'Carrera',}).setOrigin(0);
+        this.introDia6 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "Marvelous! This, my friend, is how you").setOrigin(0);
+        this.introDia6_1 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 100, "can interact with any object highlighted in red! [N]").setOrigin(0);
         this.counter++;
     }
 
     if(this.counter == 5 && Phaser.Input.Keyboard.JustDown(keyN)){
         this.introDia6.destroy();
         this.introDia6_1.destroy();
-        this.introDia7 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 100, "Now, proceed to the platforms above! Explore!", {fontFamily: 'Carrera',}).setOrigin(0);
+        this.introDia7 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 100, "Now, proceed to the platforms above! Explore!").setOrigin(0);
         this.counter++;
     }
 
     if(this.counter == 6 && this.playerChar.x >= 2160 && this.playerChar.y <= 303){
         this.introDia7.destroy();
-        this.introDia8 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "Great job! Now, trust me, the exit door is just one big ", {fontFamily: 'Carrera',}).setOrigin(0);
-        this.introDia8_1 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 100, "jump away, so take a big running start and - fly!", {fontFamily: 'Carrera',}).setOrigin(0);
+        this.introDia8 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "Great job! Now, trust me, the exit door is just one big ").setOrigin(0);
+        this.introDia8_1 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 100, "jump away, so take a big running start and - fly!").setOrigin(0);
         this.counter++;
     }
 }

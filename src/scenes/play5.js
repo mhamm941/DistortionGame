@@ -21,7 +21,7 @@ class play5 extends Phaser.Scene {
 
         this.counter = 0;
 
-        distTheme1.setMute(true);
+        //distTheme1.setMute(true);
         distTheme2.setMute(false);
 
         const map = this.add.tilemap("platformerMap5");

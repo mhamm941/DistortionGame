@@ -12,15 +12,12 @@ class opening extends Phaser.Scene {
         let centerY = game.config.height/2;
 
         this.add.text(centerX, centerY, "Arrow keys <- -> to move", {
-            fontFamily: 'Carrera',
             fontSize: '20px',
         }).setOrigin(0,0);
         this.add.text(centerX, centerY + 32, "Space bar to jump",{
-            fontFamily: 'Carrera',
             fontSize: '20px'
         })
         this.add.text(centerX, centerY + 64, "ENTER to pause",{
-            fontFamily: 'Carrera',
             fontSize: '20px'
         })
         this.input.keyboard.on('keydown', () => {
