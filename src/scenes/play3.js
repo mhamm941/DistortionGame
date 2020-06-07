@@ -10,6 +10,7 @@ class play3 extends Phaser.Scene {
         this.load.tilemapTiledJSON('platformerMap3', './assets/map3.json');
 
         this.load.audio('jump', './assets/jump.wav');
+        this.load.audio('hurt', './assets/hurt.wav');
     }
 
     create() {
@@ -92,7 +93,9 @@ class play3 extends Phaser.Scene {
     }
 
     check() { 
-        
+        this.sound.play('hurt');
+        this.playRestart.scene.restart();
+        this.scene.start("play3Scene");
     }
 
      checkDoor(){

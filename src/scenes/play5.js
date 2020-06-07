@@ -10,9 +10,12 @@ class play5 extends Phaser.Scene {
         this.load.tilemapTiledJSON('platformerMap5', './assets/map5.json');
 
         this.load.audio('jump', './assets/jump.wav');
+        this.load.audio('hurt', './assets/hurt.wav');
     }
 
     create() {
+
+        this.playRestart = this.scene.get("play5Scene");
 
         this.counter = 0;
 
@@ -84,8 +87,9 @@ class play5 extends Phaser.Scene {
     }
 
     check() {
-
-         this.scene.start('gameOverScene')
+        this.sound.play('hurt');
+        this.playRestart.scene.restart();
+        this.scene.start("play5Scene");
      }
 
      checkDoor(){

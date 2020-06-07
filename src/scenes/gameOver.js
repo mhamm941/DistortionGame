@@ -7,6 +7,7 @@ class gameOver extends Phaser.Scene {
     }
 
     create() {
+
         this.counter = 0;
 
 
@@ -68,7 +69,7 @@ class gameOver extends Phaser.Scene {
         }
 
         if(counter == 6 && Phaser.Input.Keyboard.JustDown(keyN)){
-            
+            this.scene.start('gameOverPlayScene')
         }
 
     }

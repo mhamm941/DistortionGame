@@ -1,6 +1,6 @@
-class play extends Phaser.Scene {
+class gameOverPlay extends Phaser.Scene {
     constructor() {
-        super("playScene");
+        super("gameOverPlayScene");
     }
     
 
@@ -9,7 +9,7 @@ class play extends Phaser.Scene {
         this.load.image('block', './assets/block.png');
 
         this.load.image('allMapTileSprite', './assets/tileTesting.png');
-        this.load.tilemapTiledJSON('platformerMap', './assets/map2.json');
+        this.load.tilemapTiledJSON('platformerMapv2', './assets/map2v2.json');
 
         //this.load.image('dialogBox', './assets/dialogBox.png');
 
@@ -22,7 +22,7 @@ class play extends Phaser.Scene {
 
         this.counter = 0;
 
-        const map = this.add.tilemap("platformerMap");
+        const map = this.add.tilemap("platformerMapv2");
         const tileset = map.addTilesetImage("tileTesting", "allMapTileSprite");
 
         const backgroundLayer = map.createStaticLayer("background", tileset, 0, 0);
@@ -30,7 +30,9 @@ class play extends Phaser.Scene {
         const spikeLayer = map.createStaticLayer("spikes", tileset, 0, 0);
 
         const playerSpawn = map.findObject("objects", obj => obj.name === "player spawn");
-        const blockSpawn = map.findObject("objects", obj => obj.name === "block spawn");
+        const blockSpawn1 = map.findObject("objects", obj => obj.name === "block spawn");
+        const blockSpawn2 = map.findObject("objects", obj => obj.name === "block2 spawn");
+        const blockSpawn3 = map.findObject("objects", obj => obj.name === "block3 spawn");
 
         const doorLayer = map.createStaticLayer("door", tileset, 0, 0);
 
@@ -49,7 +51,9 @@ class play extends Phaser.Scene {
 
         this.physics.add.collider(this.playerChar, groundLayer);
 
-        this.block = new obstacle(this, blockSpawn.x, blockSpawn.y, 'block');
+        this.block1 = new obstacle(this, blockSpawn1.x, blockSpawn1.y, 'block');
+        this.block2 = new obstacle(this, blockSpawn2.x, blockSpawn2.y, 'block');
+        this.block3 = new obstacle(this, blockSpawn3.x, blockSpawn3.y, 'block');
 
         this.physics.add.collider(this.playerChar, this.block);
         this.physics.add.collider(this.block, groundLayer);
@@ -101,10 +105,9 @@ class play extends Phaser.Scene {
         if( this.counter == 1 && Phaser.Input.Keyboard.JustDown(keyN)){
             this.introDia2.destroy();
             this.introDia2_1.destroy();
-            this.introDia3 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "Who am I? No matter.").setOrigin(0);
-            this.introDia3line = this.add.text(this.playerChar.x - 100, this.playerChar.y - 100, "Think of me as your companion that’s here to help! [N]").setOrigin(0);
+            this.introDia3 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "Who am I? No matter. Think of ").setOrigin(0);
+            this.introDia3line = this.add.text(this.playerChar.x - 100, this.playerChar.y - 100, "me as your... friend, who’s here to help!").setOrigin(0);
             this.counter++;
-            console.log(this.counter);
         }
 
     if(this.counter == 2 && Phaser.Input.Keyboard.JustDown(keyN)){
@@ -144,12 +147,11 @@ class play extends Phaser.Scene {
         this.introDia7.destroy();
         this.introDia8 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 100, "Great job! Now, trust me, the exit door is just one big ").setOrigin(0);
         this.introDia8_1 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 100, "jump away, so take a big running start and - fly!").setOrigin(0);
-        this.counter++;
     }
 }
 
     check() {
-        this.scene.start('play2Scene');
+        this.scene.start('gameOverPlay2');
         this.sound.play('hurt');
     }
 }

@@ -13,7 +13,7 @@ let config = {
             }
         }
     },
-    scene: [ music, menu, opening, play, play2, play3, play4, gameOver]
+    scene: [ music, menu, opening, play, play2, play3, play4, play5, gameOver, gameOverPlay, gameOverPlay2, gameOverv2 ]
 };
 
 
