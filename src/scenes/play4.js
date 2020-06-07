@@ -21,7 +21,7 @@ class play4 extends Phaser.Scene {
 
         this.counter = 0;
 
-        distTheme1.setMute(true);
+        //distTheme1.setMute(true);
         distTheme2.setMute(false);
 
         const map = this.add.tilemap("platformerMap4");
@@ -64,8 +64,8 @@ class play4 extends Phaser.Scene {
         this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
         this.cameras.main.startFollow(this.playerChar, true, 0.25, 0.25);
 
-        this.introDia = this.add.text(this.playerChar.x, this.playerChar.y - 150, "Good! You finally made it. Now, my friend, ").setOrigin(0);
-        this.introDia_2 = this.add.text(this.playerChar.x, this.playerChar.y - 100, "let us apply the previous knowledge to this next task. [N]").setOrigin(0);
+        this.introDia = this.add.text(this.playerChar.x, this.playerChar.y - 150, "Good! You finally made it. Now, my friend, ", {fontFamily: 'Carrera',}).setOrigin(0);
+        this.introDia_2 = this.add.text(this.playerChar.x, this.playerChar.y - 100, "let us apply the previous knowledge to this next task. [N]", {fontFamily: 'Carrera',}).setOrigin(0);
 
         
     }
@@ -86,27 +86,27 @@ class play4 extends Phaser.Scene {
         if(this.counter == 0 && Phaser.Input.Keyboard.JustDown(keyN)){
             this.introDia.destroy();
             this.introDia_2.destroy();
-            this.introDia2 = this.add.text(this.playerChar.x, this.playerChar.y - 100, "Get to the door again!").setOrigin(0);
+            this.introDia2 = this.add.text(this.playerChar.x, this.playerChar.y - 100, "Get to the door again!", {fontFamily: 'Carrera',}).setOrigin(0);
             this.counter++;
         }
 
         if(this.counter == 1 && this.playerChar.x >= 1216){
             this.introDia2.destroy();
-            this.introDia3 = this.add.text(this.playerChar.x, this.playerChar.y - 100, "You're doing so great!").setOrigin(0);
+            this.introDia3 = this.add.text(this.playerChar.x, this.playerChar.y - 100, "You're doing so great!", {fontFamily: 'Carrera',}).setOrigin(0);
             this.counter++;
         }
 
         if(this.counter == 2 && this.playerChar.x >= 1952){
             this.introDia3.destroy();
-            this.introDia4 = this.add.text(this.playerChar.x, this.playerChar.y - 150, "I am so glad I'm with you!").setOrigin(0);
-            this.introDia4_1 = this.add.text(this.playerChar.x, this.playerChar.y - 100, " I'm sure you'd do the same, right?").setOrigin(0);
+            this.introDia4 = this.add.text(this.playerChar.x, this.playerChar.y - 150, "I am so glad I'm with you!", {fontFamily: 'Carrera',}).setOrigin(0);
+            this.introDia4_1 = this.add.text(this.playerChar.x, this.playerChar.y - 100, " I'm sure you'd do the same, right?", {fontFamily: 'Carrera',}).setOrigin(0);
             this.counter++;
         }
 
         if(this.counter == 3 && this.playerChar.x >= 2464){
             this.introDia4.destroy();
             this.introDia4_1.destroy();
-            this.introDia5 = this.add.text(this.playerChar.x, this.playerChar.y - 150, "You're so close!!").setOrigin(0);
+            this.introDia5 = this.add.text(this.playerChar.x, this.playerChar.y - 150, "You're so close!!", {fontFamily: 'Carrera',}).setOrigin(0);
             this.counter++;
         }
     }
