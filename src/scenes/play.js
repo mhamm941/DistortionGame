@@ -61,10 +61,7 @@ class play extends Phaser.Scene {
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
         keySPACE = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
 
-        keyTEMP = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
-
         keyN = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.N);
-        keyM = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.M);
 
         //camera bounds 
         this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
@@ -85,9 +82,6 @@ class play extends Phaser.Scene {
             this.playerChar.setVelocity(0, -350);
             this.sound.play('jump');
             }
-        }
-        if(Phaser.Input.Keyboard.JustDown(keyTEMP)) {
-            this.scene.start("gameOverScene");
         }
 
         if( this.counter == 0 && Phaser.Input.Keyboard.JustDown(keyN)){
@@ -142,7 +136,7 @@ class play extends Phaser.Scene {
 
     if(this.counter == 6 && this.playerChar.x >= 2160 && this.playerChar.y <= 303){
         this.introDia7.destroy();
-        this.introDia8 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 100, "Great job! Now, trust me, the exit door is just one big ").setOrigin(0);
+        this.introDia8 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "Great job! Now, trust me, the exit door is just one big ").setOrigin(0);
         this.introDia8_1 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 100, "jump away, so take a big running start and - fly!").setOrigin(0);
         this.counter++;
     }

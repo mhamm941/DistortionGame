@@ -66,14 +66,14 @@ class play2 extends Phaser.Scene {
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
         keySPACE = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
 
-        keyTEMP = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
+        keyN = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.N);
 
         //camera bounds 
         this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
         this.cameras.main.startFollow(this.playerChar, true, 0.25, 0.25);
 
-        this.introDia = this.add.text(this.playerChar.x, this.playerChar.y - 150, "Oh, how unfortunate that was!").setOrigin(0);
-        this.introDia_2 = this.add.text(this.playerChar.x, this.playerChar.y - 100, "I am so sorry you had to go through that. Try again, friend!").setOrigin(0);
+        this.introDia = this.add.text(this.playerChar.x-100, this.playerChar.y - 150, "Oh, how unfortunate that was!").setOrigin(0);
+        this.introDia_2 = this.add.text(this.playerChar.x-100, this.playerChar.y - 100, "I am so sorry you had to go through that. Try again, friend!").setOrigin(0);
     }
 
     update() {
@@ -88,21 +88,20 @@ class play2 extends Phaser.Scene {
             this.sound.play('jump');
             }
         }
-        if(Phaser.Input.Keyboard.JustDown(keyTEMP)) {
-            this.scene.start("gameOverScene");
-        }
 
-        if(this.counter == 0 && this.playerChar.x >= 1388 && this.playerChar.y >= 1378){
+        if(this.counter == 0 && this.playerChar.x >= 1388){
+            this.diaFlower2.destroy();
             this.introDia.destroy();
             this.introDia_2.destroy();
             this.introDia2 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "Just up those platforms, like before…").setOrigin(0);
             this.counter++;
         }
 
-        if(this.counter == 1 && this.playerChar.x <= 1824 && this.playerChar.y == 352){
-            this.introDia2.destory();
-            this.introDia3 = this.add.test(this.playerChar.x - 100, this.playerChar.y - 150, "And, big jump! Oh come on, trust me, ").setOrigin(0);
-            this.introDia4 = this.add.test(this.playerChar.x - 100, this.playerChar.y - 100, "I made it possible this time, I promise!").setOrigin(0);
+        if(this.counter == 1 && this.playerChar.x >= 1824 && this.playerChar.y <= 352){
+            this.introDia2.destroy();
+            this.introDia3 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "And, big jump! Oh come on, trust me, ").setOrigin(0);
+            this.introDia4 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 100, "I made it possible this time, I promise!").setOrigin(0);
+            this.counter++;
         }
 
     }

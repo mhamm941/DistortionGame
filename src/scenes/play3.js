@@ -56,14 +56,14 @@ class play3 extends Phaser.Scene {
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
         keySPACE = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
 
-        keyTEMP = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
+        keyN = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.N);
 
         //camera bounds 
         this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
         this.cameras.main.startFollow(this.playerChar, true, 0.25, 0.25);
 
-        this.introDia = this.add.text(this.playerChar.x, this.playerChar.y - 150, "Oh dear, thats just no good! No good at all! Let us try again.").setOrigin(0);
-        this.introDia_2 = this.add.text(this.playerChar.x, this.playerChar.y - 100, "Upwards and upwards…").setOrigin(0);
+        this.introDia = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "Oh dear, thats just no good! No good at all! Let us try again.").setOrigin(0);
+        this.introDia_2 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 100, "Upwards and upwards…").setOrigin(0);
         
     }
 
@@ -79,13 +79,38 @@ class play3 extends Phaser.Scene {
             this.sound.play('jump');
             }
         }
-        if(Phaser.Input.Keyboard.JustDown(keyTEMP)) {
-            this.scene.start("gameOverScene");
-        }
 
-        if(this.counter == 0 && this.playerChar.x >= 2140 && this.playerChar.y == 288){
+
+
+        if(this.counter == 0 && this.playerChar.x >= 1728 && this.playerChar.y <= 928){
             this.introDia.destroy();
             this.introDia_2.destroy();
+            this.introDia2 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "Spectacular! Best… friend in the world!").setOrigin(0);
+            this.counter++;
+        }
+
+        if(this.counter == 1 && this.playerChar.x >= 2048 && this.playerChar.y <= 768){
+            this.introDia2.destroy();
+            this.introDia3 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "I am so happy for you! You and I make such a great team! ").setOrigin(0);
+            this.counter++;
+        }
+
+        if(this.counter == 2 && this.playerChar.x >= 1632 && this.playerChar.y <= 640){
+            this.introDia3.destroy();
+            this.introDia4 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "Oh, my friend, this is marvelous!").setOrigin(0);
+            this.counter++;
+        }
+
+        if(this.counter == 3 && this.playerChar.x >= 1824 && this.playerChar.y <= 416){
+            this.introDia4.destroy();
+            this.introDia5 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "We are almost to the end! I am having").setOrigin(0);
+            this.introDia5_1 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 100, "so much fun, I could do this forever!").setOrigin(0);
+            this.counter++;
+        }
+
+        if(this.counter == 4 && this.playerChar.x >= 2140 && this.playerChar.y <= 288){
+            this.introDia5.destroy();
+            this.introDia5_1.destroy();
             this.introDia2 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, ".. yet here we are, still. Come on, go ahead. ").setOrigin(0);
             this.introDia2_1 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 100, "if you don't make it this time, thats on you, hahahag").setOrigin(0);
             this.counter++;

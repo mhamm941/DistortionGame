@@ -65,10 +65,7 @@ class gameOverPlay extends Phaser.Scene {
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
         keySPACE = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
 
-        keyTEMP = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
-
         keyN = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.N);
-        keyM = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.M);
 
         //camera bounds 
         this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
@@ -90,9 +87,7 @@ class gameOverPlay extends Phaser.Scene {
             this.sound.play('jump');
             }
         }
-        if(Phaser.Input.Keyboard.JustDown(keyTEMP)) {
-            this.scene.start("gameOverScene");
-        }
+
 
         if( this.counter == 0 && Phaser.Input.Keyboard.JustDown(keyN)){
             this.introDia.destroy();

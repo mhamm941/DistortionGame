@@ -9,7 +9,7 @@ class player extends Phaser.Physics.Arcade.Sprite {
         //setting gravity
         this.setGravityY(400);
         this.setDragX(2000);
-        this.setScale(0.5);
+        this.setScale(0.75);
     }
     update() {
 
@@ -20,7 +20,7 @@ class player extends Phaser.Physics.Arcade.Sprite {
                 this.setVelocityX(300);
         }
 
-        console.log("x: " + this.x + " ,y: "+ this.y);
+       // console.log("x: " + this.x + " ,y: "+ this.y);
 
     }
 }

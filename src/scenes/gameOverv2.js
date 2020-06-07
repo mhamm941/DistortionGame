@@ -14,6 +14,8 @@ class gameOverv2 extends Phaser.Scene {
         this.introDia = this.add.text(game.config.width/2, game.config.height/2, "Wait, what’s going on?").setOrigin(0);
         this.introDia_2 = this.add.text(game.config.width/2, game.config.height/2, "PRESS [N] TO END").setOrigin(0);
 
+        keyN = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.N);
+
     }
 
     update() {

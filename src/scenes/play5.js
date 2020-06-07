@@ -56,14 +56,14 @@ class play5 extends Phaser.Scene {
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
         keySPACE = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
 
-        keyTEMP = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
+        keyN = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.N);
 
         //camera bounds 
         this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
         this.cameras.main.startFollow(this.playerChar, true, 0.25, 0.25);
 
         this.introDia = this.add.text(this.playerChar.x, this.playerChar.y - 150, "Welcome to the final stretch, ").setOrigin(0);
-        this.introDia_2 = this.add.text(this.playerChar.x, this.playerChar.y - 100, "my friend, you've done spectacularly so far. [N]").setOrigin(0);
+        this.introDia_2 = this.add.text(this.playerChar.x, this.playerChar.y - 100, "my friend, you've done spectacularly so far.").setOrigin(0);
 
         
     }
@@ -79,9 +79,6 @@ class play5 extends Phaser.Scene {
             this.playerChar.setVelocity(0, -350);
             this.sound.play('jump');
             }
-        }
-        if(Phaser.Input.Keyboard.JustDown(keyTEMP)) {
-            this.scene.start("gameOverScene");
         }
 
     }
