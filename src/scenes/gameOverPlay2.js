@@ -71,8 +71,8 @@ class gameOverPlay2 extends Phaser.Scene {
         this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
         this.cameras.main.startFollow(this.playerChar, true, 0.25, 0.25);
 
-        this.introDia = this.add.text(this.playerChar.x, this.playerChar.y - 150, "Ok, this is no good at all. Since you’re incapable ").setOrigin(0);
-        this.introDia_1 = this.add.text(this.playerChar.x, this.playerChar.y - 100, "of doing this level, maybe I’ll keep it insolvable. [N]").setOrigin(0);
+        this.introDia = this.add.text(this.playerChar.x, this.playerChar.y - 150, "Ok, this is no good at all. Since you’re incapable ", {fontFamily: 'Carrera',}).setOrigin(0);
+        this.introDia_1 = this.add.text(this.playerChar.x, this.playerChar.y - 100, "of doing this level, maybe I’ll keep it insolvable. [N]", {fontFamily: 'Carrera',}).setOrigin(0);
 
     }
 
@@ -100,31 +100,31 @@ class gameOverPlay2 extends Phaser.Scene {
         if( this.counter == 1 && this.playerChar.x >= 1280){
             this.introDia2.destroy();
             this.introDia2_1.destroy();
-            this.introDia3 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "That way, you’re stuck. No way to escape. ").setOrigin(0);
+            this.introDia3 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "That way, you’re stuck. No way to escape. ", {fontFamily: 'Carrera',}).setOrigin(0);
             this.counter++;
         }
 
         if( this.counter == 2 && this.playerChar.x >= 2016){
             this.introDia3.destroy();
-            this.introDia4 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "Stuck with me").setOrigin(0);
+            this.introDia4 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "Stuck with me", {fontFamily: 'Carrera',}).setOrigin(0);
             this.counter++;
         }
 
         if( this.counter == 3 && this.playerChar.x >= 2016 && this.playerChar.y <= 704){
-            this.introDia5 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "Forever").setOrigin(0);
+            this.introDia5 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "Forever", {fontFamily: 'Carrera',}).setOrigin(0);
             this.counter++;
         }
 
         if( this.counter == 4 && this.playerChar.x >= 1728 && this.playerChar.y <= 640){
-            this.introDia6 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "And ever.").setOrigin(0);
+            this.introDia6 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "And ever.", {fontFamily: 'Carrera',}).setOrigin(0);
             this.counter++;
         }
 
         if( this.counter == 4 && this.playerChar.x >= 1728 && this.playerChar.y <= 640){
-            this.introDia7 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "And ever.").setOrigin(0);
-            this.add.text(this.playerChar.x - 150, this.playerChar.y - 100, "FOREVER and EVER.").setOrigin(0);
-            this.add.text(this.playerChar.x - 200, this.playerChar.y - 50, "FOREVER nd EVER and ever").setOrigin(0);
-            this.add.text(this.playerChar.x, this.playerChar.y - 200, "FOREVER FOREVER").setOrigin(0);
+            this.introDia7 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "And ever.", {fontFamily: 'Carrera',}).setOrigin(0);
+            this.add.text(this.playerChar.x - 150, this.playerChar.y - 100, "FOREVER and EVER.", {fontFamily: 'Carrera',}).setOrigin(0);
+            this.add.text(this.playerChar.x - 200, this.playerChar.y - 50, "FOREVER nd EVER and ever", {fontFamily: 'Carrera',}).setOrigin(0);
+            this.add.text(this.playerChar.x, this.playerChar.y - 200, "FOREVER FOREVER", {fontFamily: 'Carrera',}).setOrigin(0);
             this.counter++;
         }
     

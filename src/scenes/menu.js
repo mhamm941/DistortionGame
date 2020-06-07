@@ -16,11 +16,13 @@ class menu extends Phaser.Scene {
         let centerX = game.config.width/2;
         let centerY = game.config.height/2;
 
-        this.add.text(centerX, centerY, "distortion game", {
+        this.add.text(centerX, 32, "My Friend X", {
+            fontFamily: 'Carrera',
             fontSize: '40px',
         }).setOrigin(0,0);
-        this.add.text(centerX, centerY + 64, "press any key to continue",{
-            fontSize: '20px'
+        this.add.text(centerX, 96, "press any key to continue",{
+            fontFamily: 'Carrera',
+            fontSize: '20px',
         })
         this.input.keyboard.on('keydown', () => {
             this.scene.start("openingScene");

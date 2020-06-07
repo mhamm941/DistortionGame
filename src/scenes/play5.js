@@ -64,8 +64,8 @@ class play5 extends Phaser.Scene {
         this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
         this.cameras.main.startFollow(this.playerChar, true, 0.25, 0.25);
 
-        this.introDia = this.add.text(this.playerChar.x, this.playerChar.y - 150, "Welcome to the final stretch, ").setOrigin(0);
-        this.introDia_2 = this.add.text(this.playerChar.x, this.playerChar.y - 100, "my friend, you've done spectacularly so far.").setOrigin(0);
+        this.introDia = this.add.text(this.playerChar.x, this.playerChar.y - 150, "Welcome to the final stretch, ", {fontFamily: 'Carrera',}).setOrigin(0);
+        this.introDia_2 = this.add.text(this.playerChar.x, this.playerChar.y - 100, "my friend, you've done spectacularly so far.", {fontFamily: 'Carrera',}).setOrigin(0);
 
         
     }
