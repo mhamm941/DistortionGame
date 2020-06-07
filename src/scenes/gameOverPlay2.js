@@ -85,6 +85,7 @@ class gameOverPlay2 extends Phaser.Scene {
             if (Phaser.Input.Keyboard.JustDown(keySPACE)) {
             this.playerChar.setVelocity(0, -350);
             this.sound.play('jump');
+            this.camera.shake(0.05, 500);
             }
         }
 

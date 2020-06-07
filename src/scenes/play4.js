@@ -87,6 +87,26 @@ class play4 extends Phaser.Scene {
             this.introDia2 = this.add.text(this.playerChar.x, this.playerChar.y - 100, "Get to the door again!").setOrigin(0);
             this.counter++;
         }
+
+        if(this.counter == 1 && this.playerChar.x >= 1216){
+            this.introDia2.destroy();
+            this.introDia3 = this.add.text(this.playerChar.x, this.playerChar.y - 100, "You're doing so great!").setOrigin(0);
+            this.counter++;
+        }
+
+        if(this.counter == 2 && this.playerChar.x >= 1952){
+            this.introDia3.destroy();
+            this.introDia4 = this.add.text(this.playerChar.x, this.playerChar.y - 150, "I am so glad I'm with you!").setOrigin(0);
+            this.introDia4_1 = this.add.text(this.playerChar.x, this.playerChar.y - 100, " I'm sure you'd do the same, right?").setOrigin(0);
+            this.counter++;
+        }
+
+        if(this.counter == 3 && this.playerChar.x >= 2464){
+            this.introDia4.destroy();
+            this.introDia4_1.destroy();
+            this.introDia5 = this.add.text(this.playerChar.x, this.playerChar.y - 150, "You're so close!!").setOrigin(0);
+            this.counter++;
+        }
     }
 
     check() {
