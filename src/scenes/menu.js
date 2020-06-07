@@ -3,10 +3,15 @@ class menu extends Phaser.Scene {
         super("menuScene");
     }
     preload() {
+
+        this.load.image('background', './assets/menuBackground.png');
+
         this.load.audio('select', './assets/select.wav');
     }
 
     create() {
+
+        this.background = this.add.tileSprite(0, 0, 850, 600, 'background').setOrigin(0, 0);
 
         let centerX = game.config.width/2;
         let centerY = game.config.height/2;

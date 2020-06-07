@@ -1,0 +1,860 @@
+{
+	"textures": [
+		{
+			"image": "animation.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 1206,
+				"h": 232
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "player_walking-export1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 68,
+						"h": 114
+					},
+					"spriteSourceSize": {
+						"x": 11,
+						"y": 0,
+						"w": 57,
+						"h": 114
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 57,
+						"h": 114
+					}
+				},
+				{
+					"filename": "player_walking-export3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 68,
+						"h": 114
+					},
+					"spriteSourceSize": {
+						"x": 11,
+						"y": 0,
+						"w": 57,
+						"h": 114
+					},
+					"frame": {
+						"x": 1,
+						"y": 117,
+						"w": 57,
+						"h": 114
+					}
+				},
+				{
+					"filename": "player_walking-export5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 68,
+						"h": 114
+					},
+					"spriteSourceSize": {
+						"x": 11,
+						"y": 0,
+						"w": 57,
+						"h": 114
+					},
+					"frame": {
+						"x": 60,
+						"y": 1,
+						"w": 57,
+						"h": 114
+					}
+				},
+				{
+					"filename": "player_walking-export7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 68,
+						"h": 114
+					},
+					"spriteSourceSize": {
+						"x": 11,
+						"y": 0,
+						"w": 57,
+						"h": 114
+					},
+					"frame": {
+						"x": 60,
+						"y": 117,
+						"w": 57,
+						"h": 114
+					}
+				},
+				{
+					"filename": "player_walking_left-export1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 68,
+						"h": 114
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 57,
+						"h": 114
+					},
+					"frame": {
+						"x": 119,
+						"y": 1,
+						"w": 57,
+						"h": 114
+					}
+				},
+				{
+					"filename": "player_walking_left-export3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 68,
+						"h": 114
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 57,
+						"h": 114
+					},
+					"frame": {
+						"x": 119,
+						"y": 117,
+						"w": 57,
+						"h": 114
+					}
+				},
+				{
+					"filename": "player_walking_left-export5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 68,
+						"h": 114
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 57,
+						"h": 114
+					},
+					"frame": {
+						"x": 178,
+						"y": 1,
+						"w": 57,
+						"h": 114
+					}
+				},
+				{
+					"filename": "player_walking_left-export7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 68,
+						"h": 114
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 57,
+						"h": 114
+					},
+					"frame": {
+						"x": 178,
+						"y": 117,
+						"w": 57,
+						"h": 114
+					}
+				},
+				{
+					"filename": "player_walking_with_flower3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 68,
+						"h": 114
+					},
+					"spriteSourceSize": {
+						"x": 11,
+						"y": 0,
+						"w": 57,
+						"h": 114
+					},
+					"frame": {
+						"x": 237,
+						"y": 1,
+						"w": 57,
+						"h": 114
+					}
+				},
+				{
+					"filename": "player_walking_with_flower7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 68,
+						"h": 114
+					},
+					"spriteSourceSize": {
+						"x": 11,
+						"y": 0,
+						"w": 57,
+						"h": 114
+					},
+					"frame": {
+						"x": 237,
+						"y": 117,
+						"w": 57,
+						"h": 114
+					}
+				},
+				{
+					"filename": "player_walking_with_flower_left-export3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 68,
+						"h": 114
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 57,
+						"h": 114
+					},
+					"frame": {
+						"x": 296,
+						"y": 1,
+						"w": 57,
+						"h": 114
+					}
+				},
+				{
+					"filename": "player_walking_with_flower_left-export7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 68,
+						"h": 114
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 57,
+						"h": 114
+					},
+					"frame": {
+						"x": 296,
+						"y": 117,
+						"w": 57,
+						"h": 114
+					}
+				},
+				{
+					"filename": "player_walking_with_flower1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 68,
+						"h": 114
+					},
+					"spriteSourceSize": {
+						"x": 11,
+						"y": 0,
+						"w": 56,
+						"h": 114
+					},
+					"frame": {
+						"x": 355,
+						"y": 1,
+						"w": 56,
+						"h": 114
+					}
+				},
+				{
+					"filename": "player_walking_with_flower5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 68,
+						"h": 114
+					},
+					"spriteSourceSize": {
+						"x": 11,
+						"y": 0,
+						"w": 56,
+						"h": 114
+					},
+					"frame": {
+						"x": 355,
+						"y": 117,
+						"w": 56,
+						"h": 114
+					}
+				},
+				{
+					"filename": "player_walking_with_flower_left-export1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 68,
+						"h": 114
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 56,
+						"h": 114
+					},
+					"frame": {
+						"x": 413,
+						"y": 1,
+						"w": 56,
+						"h": 114
+					}
+				},
+				{
+					"filename": "player_walking_with_flower_left-export5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 68,
+						"h": 114
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 56,
+						"h": 114
+					},
+					"frame": {
+						"x": 413,
+						"y": 117,
+						"w": 56,
+						"h": 114
+					}
+				},
+				{
+					"filename": "player_walking-export4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 68,
+						"h": 114
+					},
+					"spriteSourceSize": {
+						"x": 11,
+						"y": 0,
+						"w": 53,
+						"h": 114
+					},
+					"frame": {
+						"x": 471,
+						"y": 1,
+						"w": 53,
+						"h": 114
+					}
+				},
+				{
+					"filename": "player_walking-export8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 68,
+						"h": 114
+					},
+					"spriteSourceSize": {
+						"x": 11,
+						"y": 0,
+						"w": 53,
+						"h": 114
+					},
+					"frame": {
+						"x": 471,
+						"y": 117,
+						"w": 53,
+						"h": 114
+					}
+				},
+				{
+					"filename": "player_walking_left-export4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 68,
+						"h": 114
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 0,
+						"w": 53,
+						"h": 114
+					},
+					"frame": {
+						"x": 526,
+						"y": 1,
+						"w": 53,
+						"h": 114
+					}
+				},
+				{
+					"filename": "player_walking_left-export8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 68,
+						"h": 114
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 0,
+						"w": 53,
+						"h": 114
+					},
+					"frame": {
+						"x": 526,
+						"y": 117,
+						"w": 53,
+						"h": 114
+					}
+				},
+				{
+					"filename": "player_walking_with_flower4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 68,
+						"h": 114
+					},
+					"spriteSourceSize": {
+						"x": 11,
+						"y": 0,
+						"w": 53,
+						"h": 114
+					},
+					"frame": {
+						"x": 581,
+						"y": 1,
+						"w": 53,
+						"h": 114
+					}
+				},
+				{
+					"filename": "player_walking_with_flower8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 68,
+						"h": 114
+					},
+					"spriteSourceSize": {
+						"x": 11,
+						"y": 0,
+						"w": 53,
+						"h": 114
+					},
+					"frame": {
+						"x": 581,
+						"y": 117,
+						"w": 53,
+						"h": 114
+					}
+				},
+				{
+					"filename": "player_walking_with_flower_left-export4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 68,
+						"h": 114
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 0,
+						"w": 53,
+						"h": 114
+					},
+					"frame": {
+						"x": 636,
+						"y": 1,
+						"w": 53,
+						"h": 114
+					}
+				},
+				{
+					"filename": "player_walking_with_flower_left-export8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 68,
+						"h": 114
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 0,
+						"w": 53,
+						"h": 114
+					},
+					"frame": {
+						"x": 636,
+						"y": 117,
+						"w": 53,
+						"h": 114
+					}
+				},
+				{
+					"filename": "player.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 51,
+						"h": 114
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 51,
+						"h": 114
+					},
+					"frame": {
+						"x": 691,
+						"y": 1,
+						"w": 51,
+						"h": 114
+					}
+				},
+				{
+					"filename": "player_left.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 51,
+						"h": 114
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 51,
+						"h": 114
+					},
+					"frame": {
+						"x": 691,
+						"y": 117,
+						"w": 51,
+						"h": 114
+					}
+				},
+				{
+					"filename": "player_rose.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 51,
+						"h": 114
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 51,
+						"h": 114
+					},
+					"frame": {
+						"x": 744,
+						"y": 1,
+						"w": 51,
+						"h": 114
+					}
+				},
+				{
+					"filename": "player_rose_left.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 51,
+						"h": 114
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 51,
+						"h": 114
+					},
+					"frame": {
+						"x": 744,
+						"y": 117,
+						"w": 51,
+						"h": 114
+					}
+				},
+				{
+					"filename": "player_walking_with_flower2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 68,
+						"h": 114
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 4,
+						"w": 67,
+						"h": 110
+					},
+					"frame": {
+						"x": 797,
+						"y": 1,
+						"w": 67,
+						"h": 110
+					}
+				},
+				{
+					"filename": "player_walking_with_flower_left-export2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 68,
+						"h": 114
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 4,
+						"w": 67,
+						"h": 110
+					},
+					"frame": {
+						"x": 797,
+						"y": 113,
+						"w": 67,
+						"h": 110
+					}
+				},
+				{
+					"filename": "player_walking-export6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 68,
+						"h": 114
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 6,
+						"w": 68,
+						"h": 108
+					},
+					"frame": {
+						"x": 866,
+						"y": 1,
+						"w": 68,
+						"h": 108
+					}
+				},
+				{
+					"filename": "player_walking_left-export6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 68,
+						"h": 114
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 6,
+						"w": 68,
+						"h": 108
+					},
+					"frame": {
+						"x": 866,
+						"y": 111,
+						"w": 68,
+						"h": 108
+					}
+				},
+				{
+					"filename": "player_walking_with_flower6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 68,
+						"h": 114
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 6,
+						"w": 68,
+						"h": 108
+					},
+					"frame": {
+						"x": 936,
+						"y": 1,
+						"w": 68,
+						"h": 108
+					}
+				},
+				{
+					"filename": "player_walking_with_flower_left-export6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 68,
+						"h": 114
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 6,
+						"w": 68,
+						"h": 108
+					},
+					"frame": {
+						"x": 936,
+						"y": 111,
+						"w": 68,
+						"h": 108
+					}
+				},
+				{
+					"filename": "player_walking-export2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 68,
+						"h": 114
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 6,
+						"w": 67,
+						"h": 108
+					},
+					"frame": {
+						"x": 1006,
+						"y": 1,
+						"w": 67,
+						"h": 108
+					}
+				},
+				{
+					"filename": "player_walking_left-export2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 68,
+						"h": 114
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 6,
+						"w": 67,
+						"h": 108
+					},
+					"frame": {
+						"x": 1006,
+						"y": 111,
+						"w": 67,
+						"h": 108
+					}
+				},
+				{
+					"filename": "player_jump.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 106
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 106
+					},
+					"frame": {
+						"x": 1075,
+						"y": 1,
+						"w": 64,
+						"h": 106
+					}
+				},
+				{
+					"filename": "player_jump_left.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 106
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 106
+					},
+					"frame": {
+						"x": 1075,
+						"y": 109,
+						"w": 64,
+						"h": 106
+					}
+				},
+				{
+					"filename": "player_jump_rose.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 106
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 106
+					},
+					"frame": {
+						"x": 1141,
+						"y": 1,
+						"w": 64,
+						"h": 106
+					}
+				},
+				{
+					"filename": "player_jump_rose_left.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 106
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 106
+					},
+					"frame": {
+						"x": 1141,
+						"y": 109,
+						"w": 64,
+						"h": 106
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:82f3f50fcbde4b6717b89034c3e4b60a:7e766434189b218516fe44f9b996ea55:9a4e7f1aae4f9765a57ff756284ef5fc$"
+	}
+}

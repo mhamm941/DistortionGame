@@ -5,6 +5,9 @@ class play extends Phaser.Scene {
     
 
     preload() {
+
+        this.load.atlas('animation_atlas', './assets/animation.png', './assets/animation.json');
+
         this.load.image('player', './assets/player.png');
         this.load.image('block', './assets/block.png');
 
@@ -77,9 +80,16 @@ class play extends Phaser.Scene {
 
         this.playerChar.isGrounded = this.playerChar.body.blocked.down;
 
+        if(keyLEFT.isDown) {
+            this.playerChar.setFlip(true, false);
+        }
+            else if(keyRIGHT.isDown) {
+                this.playerChar.resetFlip();
+        }
+
         if(this.playerChar.isGrounded) {
             if (Phaser.Input.Keyboard.JustDown(keySPACE)) {
-            this.playerChar.setVelocity(0, -350);
+            this.playerChar.setVelocityY(-350);
             this.sound.play('jump');
             }
         }
