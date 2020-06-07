@@ -7,7 +7,7 @@ class play4 extends Phaser.Scene {
         this.load.image('player', './assets/player.png');
 
         this.load.image('allMapTileSprite', './assets/tileTesting.png');
-        this.load.tilemapTiledJSON('platformerMap', './assets/map3.json');
+        this.load.tilemapTiledJSON('platformerMap4', './assets/map4.json');
 
         this.load.audio('jump', './assets/jump.wav');
     }
@@ -19,7 +19,7 @@ class play4 extends Phaser.Scene {
         distTheme1.setMute(true);
         distTheme2.setMute(false);
 
-        const map = this.add.tilemap("platformerMap");
+        const map = this.add.tilemap("platformerMap4");
         const tileset = map.addTilesetImage("tileTesting", "allMapTileSprite");
 
         const backgroundLayer = map.createStaticLayer("background", tileset, 0, 0);
@@ -59,17 +59,9 @@ class play4 extends Phaser.Scene {
         this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
         this.cameras.main.startFollow(this.playerChar, true, 0.25, 0.25);
 
+        this.introDia = this.add.text(this.playerChar.x, this.playerChar.y - 150, "Good! You finally made it. Now, my friend, ").setOrigin(0);
+        this.introDia_2 = this.add.text(this.playerChar.x, this.playerChar.y - 100, "let us apply the previous knowledge to this next task. [N]").setOrigin(0);
 
-
-            this.introDia = this.add.text(this.playerChar.x, this.playerChar.y - 100, "asdkjab jakdsda efwtw rsvs wasd swewf hkjgsab", {
-                fontSize: '30px',
-            }).setOrigin(0);
-            this.introDia = this.add.text(this.playerChar.x, this.playerChar.y - 150, "asdk jab jasda ty rs gs  ab", {
-                fontSize: '40px',
-            }).setOrigin(0);
-            this.introDia = this.add.text(this.playerChar.x, this.playerChar.y - 120, "atyjned yrjr sgds yhrt rew", {
-                fontSize: '60px',
-            }).setOrigin(0);
         
     }
 
@@ -89,12 +81,11 @@ class play4 extends Phaser.Scene {
             this.scene.start("gameOverScene");
         }
 
-        
-
-        if(this.counter == 1 && counterRestart == 0 && this.playerChar.x >= 2160 && this.playerChar.y <= 303){
-            this.introDia = this.add.text(this.playerChar.x, this.playerChar.y - 100, "asdkjab ja kdsda efwtw rsvs wasd swewf hkjgsab", {
-                fontSize: '30px',
-            }).setOrigin(0);
+        if(this.counter == 0 && Phaser.Input.Keyboard.JustDown(keyN)){
+            this.introDia.destroy();
+            this.introDia_2.destroy();
+            this.introDia2 = this.add.text(this.playerChar.x, this.playerChar.y - 100, "Get to the door again!").setOrigin(0);
+            this.counter++;
         }
     }
 

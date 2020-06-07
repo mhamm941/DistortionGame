@@ -95,8 +95,14 @@ class play2 extends Phaser.Scene {
         if(this.counter == 0 && this.playerChar.x >= 1388 && this.playerChar.y >= 1378){
             this.introDia.destroy();
             this.introDia_2.destroy();
-            this.introDia2 = this.add.text(this.playerChar.x - 200, this.playerChar.y - 150, "Just up those platforms, like before…").setOrigin(0);
+            this.introDia2 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "Just up those platforms, like before…").setOrigin(0);
             this.counter++;
+        }
+
+        if(this.counter == 1 && this.playerChar.x <= 1824 && this.playerChar.y == 352){
+            this.introDia2.destory();
+            this.introDia3 = this.add.test(this.playerChar.x - 100, this.playerChar.y - 150, "And, big jump! Oh come on, trust me, ").setOrigin(0);
+            this.introDia4 = this.add.test(this.playerChar.x - 100, this.playerChar.y - 100, "I made it possible this time, I promise!").setOrigin(0);
         }
 
     }
@@ -110,11 +116,6 @@ class play2 extends Phaser.Scene {
 
             this.flower.destroy();
             this.diaFlower2 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "Oh! What a nice flower you got there.").setOrigin(0);
-            this.counterFlower++;
-
-        if(this.counterFlower++ == 1 && Phaser.Input.Keyboard.JustDown(keyN)){
-            this.diaFlower2.destroy();
-        }
     }
 
 }

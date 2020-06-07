@@ -62,7 +62,7 @@ class play3 extends Phaser.Scene {
         this.cameras.main.startFollow(this.playerChar, true, 0.25, 0.25);
 
         this.introDia = this.add.text(this.playerChar.x, this.playerChar.y - 150, "Oh dear, thats just no good! No good at all! Let us try again.").setOrigin(0);
-        this.introDia = this.add.text(this.playerChar.x, this.playerChar.y - 100, "Upwards and upwards…").setOrigin(0);
+        this.introDia_2 = this.add.text(this.playerChar.x, this.playerChar.y - 100, "Upwards and upwards…").setOrigin(0);
         
     }
 
@@ -82,9 +82,11 @@ class play3 extends Phaser.Scene {
             this.scene.start("gameOverScene");
         }
 
-        if(this.counter == 0 && this.playerChar.x >= 2160 && this.playerChar.y <= 303){
-            this.introDia5 = this.add.text(this.playerChar.x - 200, this.playerChar.y - 150, "come on, you").setOrigin(0);
-            this.introDia5line = this.add.text(this.playerChar.x - 200, this.playerChar.y - 100, "can definitly squeeze in that opening").setOrigin(0);
+        if(this.counter == 0 && this.playerChar.x >= 2140 && this.playerChar.y == 288){
+            this.introDia.destroy();
+            this.introDia_2.destroy();
+            this.introDia2 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, ".. yet here we are, still. Come on, go ahead. ").setOrigin(0);
+            this.introDia2_1 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 100, "if you don't make it this time, thats on you, hahahag").setOrigin(0);
             this.counter++;
         }
     }
