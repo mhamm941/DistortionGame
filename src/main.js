@@ -27,8 +27,7 @@ let keyLEFT;
 let keyRIGHT;
 let keySPACE;
 let keyDOWN;
-let keyTEMP;
+let keyENTER;
 let keyN;
-let keyM;
 
 let playerX, playerY;

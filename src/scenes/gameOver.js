@@ -21,6 +21,7 @@ class gameOver extends Phaser.Scene {
         this.introDia_2 = this.add.text(game.config.width/2, game.config.height/2 + 50, "Now… here comes my final question. [N]").setOrigin(0);
 
         keyN = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.N);
+        
 
     }
 
@@ -72,7 +73,7 @@ class gameOver extends Phaser.Scene {
             this.introDia6.destroy();
             this.introDia6_1.destroy();
             this.introDia7 = this.add.text(game.config.width/2, game.config.height/2, "STOP!").setOrigin(0);
-            this.introDia7_1 = this.add.text(game.config.width/2, game.config.height/2 + 50, "PRESS [N] TO END").setOrigin(0);
+            this.introDia7_1 = this.add.text(game.config.width/2, game.config.height/2 + 50, "PRESS [ENTER] TO END").setOrigin(0);
             this.counter++;
         }
 
