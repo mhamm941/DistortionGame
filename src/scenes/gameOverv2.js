@@ -7,14 +7,11 @@ class gameOverv2 extends Phaser.Scene {
 
     preload() {
 
-        this.load.image('background', './assets.gameovergameover.png');
-
         this.load.audio('select', './assets/select.wav');
     }
 
     create() {
 
-        this.background = this.add.tileSprite(0, 0, 860, 600, 'background').setOrigin(0, 0);
 
         this.counter = 0;
 
