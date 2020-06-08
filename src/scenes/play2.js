@@ -74,8 +74,8 @@ class play2 extends Phaser.Scene {
         this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
         this.cameras.main.startFollow(this.playerChar, true, 0.25, 0.25);
 
-        this.introDia = this.add.text(this.playerChar.x-100, this.playerChar.y - 150, "Oh, how unfortunate that was!", {fontFamily: 'Carrera',}).setOrigin(0);
-        this.introDia_2 = this.add.text(this.playerChar.x-100, this.playerChar.y - 100, "I am so sorry you had to go through that. Try again, friend!", {fontFamily: 'Carrera',}).setOrigin(0);
+        this.introDia = this.add.text(this.playerChar.x-100, this.playerChar.y - 150, "Oh, how unfortunate that was!").setOrigin(0);
+        this.introDia_2 = this.add.text(this.playerChar.x-100, this.playerChar.y - 100, "I am so sorry you had to go through that. Try again, friend!").setOrigin(0);
     }
 
     update() {
@@ -95,14 +95,14 @@ class play2 extends Phaser.Scene {
             this.diaFlower2.destroy();
             this.introDia.destroy();
             this.introDia_2.destroy();
-            this.introDia2 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "Just up those platforms, like before…", {fontFamily: 'Carrera',}).setOrigin(0);
+            this.introDia2 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "Just up those platforms, like before…").setOrigin(0);
             this.counter++;
         }
 
         if(this.counter == 1 && this.playerChar.x >= 1824 && this.playerChar.y <= 352){
             this.introDia2.destroy();
-            this.introDia3 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "And, big jump! Oh come on, trust me, ", {fontFamily: 'Carrera',}).setOrigin(0);
-            this.introDia4 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 100, "I made it possible this time, I promise!", {fontFamily: 'Carrera',}).setOrigin(0);
+            this.introDia3 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "And, big jump! Oh come on, trust me, ").setOrigin(0);
+            this.introDia4 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 100, "I made it possible this time, I promise!").setOrigin(0);
             this.counter++;
         }
 
@@ -116,7 +116,7 @@ class play2 extends Phaser.Scene {
     checkFlower(){
 
             this.flower.destroy();
-            this.diaFlower2 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "Oh! What a nice flower you got there.", {fontFamily: 'Carrera',}).setOrigin(0);
+            this.diaFlower2 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "Oh! What a nice flower you got there.").setOrigin(0);
     }
 
 }
