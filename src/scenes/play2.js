@@ -131,43 +131,42 @@ class play2 extends Phaser.Scene {
 
    else if(secondRound){
 
-        if( this.counter == 0 && Phaser.Input.Keyboard.JustDown(keyN)){
-            this.diaFlower
-            this.diaFlower2.destroy();
-            this.introDia.destroy();
-            this.introDiq_1.destroy();
-            this.counter++;
-        }
 
-        if( this.counter == 1 && this.playerChar.x >= 1280){
-            this.introDia2.destroy();
-            this.introDia2_1.destroy();
+        if( this.counter == 0 && this.playerChar.x >= 1760 && this.playerChar.y <= 1216){
             this.introDia3 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "That way, you’re stuck. No way to escape. ", {fontFamily: 'Carrera',}).setOrigin(0);
             this.counter++;
         }
 
-        if( this.counter == 2 && this.playerChar.x >= 2016){
+        if( this.counter == 1 && this.playerChar.x >= 1440 && this.playerChar.y <= 1088){
             this.introDia3.destroy();
-            this.introDia4 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "Stuck with me", {fontFamily: 'Carrera',}).setOrigin(0);
+            this.introDia4 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "Stuck with me", {fontFamily: 'Carrera', fontSize: '40px',}).setOrigin(0);
             this.counter++;
         }
 
-        if( this.counter == 3 && this.playerChar.x >= 2016 && this.playerChar.y <= 704){
-            this.introDia5 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "Forever", {fontFamily: 'Carrera',}).setOrigin(0);
+        if( this.counter == 2 && this.playerChar.x >= 960 && this.playerChar.y <= 768){
+            this.introDia5 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "Forever", {fontFamily: 'Carrera', fontSize: '100px',}).setOrigin(0);
             this.counter++;
         }
 
-        if( this.counter == 4 && this.playerChar.x >= 1728 && this.playerChar.y <= 640){
+        if( this.counter == 3 && this.playerChar.x >= 1280 && this.playerChar.y <= 608){
             this.introDia6 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "And ever.", {fontFamily: 'Carrera',}).setOrigin(0);
             this.counter++;
         }
 
-        if( this.counter == 5 && this.playerChar.x >= 1728 && this.playerChar.y <= 640){
+        if( this.counter == 4 && this.playerChar.x >= 1568 && this.playerChar.y <= 448){
             this.introDia7 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "And ever.", {fontFamily: 'Carrera',}).setOrigin(0);
-            this.add.text(this.playerChar.x - 150, this.playerChar.y - 100, "FOREVER and EVER.", {fontFamily: 'Carrera',}).setOrigin(0);
-            this.add.text(this.playerChar.x - 200, this.playerChar.y - 50, "FOREVER nd EVER and ever", {fontFamily: 'Carrera',}).setOrigin(0);
+            this.add.text(this.playerChar.x - 150, this.playerChar.y - 100, "FOREVER and EVER.", {fontFamily: 'Carrera', fontSize: '40px',}).setOrigin(0);
+            this.add.text(this.playerChar.x - 200, this.playerChar.y - 50, "FOREVER nd EVER and ever", {fontFamily: 'Carrera', fontSize: '50px',}).setOrigin(0);
             this.add.text(this.playerChar.x, this.playerChar.y - 200, "FOREVER FOREVER", {fontFamily: 'Carrera',}).setOrigin(0);
             this.counter++;
+        }
+
+        if( this.counter == 5 && this.playerChar.x >= 1952 && this.playerChar.y <= 352){
+            this.introDia7 = this.add.text(this.playerChar.x - 50, this.playerChar.y - 150, "And ever.", {fontFamily: 'Carrera',}).setOrigin(0);
+            this.add.text(this.playerChar.x - 150, this.playerChar.y - 100, "FOREVER and EVER.", {fontFamily: 'Carrera',}).setOrigin(0);
+            this.add.text(this.playerChar.x - 200, this.playerChar.y - 50, "FOREVER nd EVER and ever", {fontFamily: 'Carrera', fontSize: '100px',}).setOrigin(0);
+            this.add.text(this.playerChar.x - 400, this.playerChar.y - 200, "FOREVER FOREVER", {fontFamily: 'Carrera', fontSize: '40px',}).setOrigin(0);
+            //this.counter++;
         }
     }
 

@@ -98,7 +98,7 @@ class play extends Phaser.Scene {
 
         if( this.counter == 0 && Phaser.Input.Keyboard.JustDown(keyN)){
             this.introDia.destroy();
-            this.introDia2 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "This is a puzzle environment designed by yours truly!").setOrigin(0);
+            this.introDia2 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "This is a platformer environment designed by yours truly!").setOrigin(0);
             this.introDia2_1 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 100, "Hope you like it! [N]").setOrigin(0);
             this.counter++;
             console.log(this.counter);

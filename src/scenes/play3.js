@@ -105,14 +105,14 @@ class play3 extends Phaser.Scene {
 
         if(this.counter == 2 && this.playerChar.x >= 1632 && this.playerChar.y <= 640){
             this.introDia3.destroy();
-            this.introDia4 = this.add.text(this.playerChar.x - 200, this.playerChar.y - 150, "Oh, my friend, this is marvelous!", {fontSize: '40px',}).setOrigin(0);
+            this.introDia4 = this.add.text(this.playerChar.x - 350, this.playerChar.y - 150, "Oh, my friend, this is marvelous!", {fontSize: '40px',}).setOrigin(0);
             this.counter++;
         }
 
         if(this.counter == 3 && this.playerChar.x >= 1824 && this.playerChar.y <= 416){
             this.introDia4.destroy();
             this.introDia5 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "We are almost to the end! I am having").setOrigin(0);
-            this.introDia5_1 = this.add.text(this.playerChar.x - 200, this.playerChar.y - 100, "so much fun, I could do this forever!", {fontSize: '40px',}).setOrigin(0);
+            this.introDia5_1 = this.add.text(this.playerChar.x - 350, this.playerChar.y - 100, "so much fun, I could do this forever!", {fontSize: '40px',}).setOrigin(0);
             this.counter++;
         }
 
