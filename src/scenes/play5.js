@@ -6,7 +6,7 @@ class play5 extends Phaser.Scene {
     preload() {
         this.load.atlas('animation_atlas', './assets/animation.png', './assets/animation.json');
 
-        this.load.image('player', './assets/player.png');
+        this.load.image('playerf', './assets/player_rose.png');
 
         this.load.image('allMapTileSprite', './assets/tileTesting.png');
         this.load.tilemapTiledJSON('platformerMap5', './assets/map5.json');
@@ -43,7 +43,7 @@ class play5 extends Phaser.Scene {
 
         this.physics.world.bounds.setTo(0, 0, map.widthInPixels, map.heightInPixels);
 
-        this.playerChar = new player(this, playerSpawn.x, playerSpawn.y, 'player');
+        this.playerChar = new player(this, playerSpawn.x, playerSpawn.y, 'playerf');
         //this.playerChar = this.physics.add.sprite(game.config.width/8, game.config.height - 150, 'player');
         this.playerChar.setGravityY(300);
         this.playerChar.setCollideWorldBounds(true);
@@ -75,6 +75,13 @@ class play5 extends Phaser.Scene {
         this.playerChar.update();
 
         this.playerChar.isGrounded = this.playerChar.body.blocked.down;
+
+        if(keyLEFT.isDown) {
+            this.playerChar.setFlip(true, false);
+        }
+            else if(keyRIGHT.isDown) {
+                this.playerChar.resetFlip();
+        }
 
         if(this.playerChar.isGrounded) {
             if (Phaser.Input.Keyboard.JustDown(keySPACE)) {

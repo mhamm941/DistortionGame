@@ -56,13 +56,12 @@ class play2 extends Phaser.Scene {
 
         this.physics.add.collider(spikeLayer, this.playerChar, this.check, null, this);
 
+        if(!secondRound){
         this.flower = new obstacle(this, flowerSpawn.x, flowerSpawn.y, 'flower');
-
         this.flower.setImmovable();
-
         this.physics.add.overlap(this.playerChar, this.flower, this.checkFlower, null, this);
-
         this.physics.add.collider(this.flower, groundLayer);
+        }
 
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
@@ -74,8 +73,18 @@ class play2 extends Phaser.Scene {
         this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
         this.cameras.main.startFollow(this.playerChar, true, 0.25, 0.25);
 
-        this.introDia = this.add.text(this.playerChar.x-100, this.playerChar.y - 150, "Oh, how unfortunate that was!").setOrigin(0);
-        this.introDia_2 = this.add.text(this.playerChar.x-100, this.playerChar.y - 100, "I am so sorry you had to go through that. Try again, friend!").setOrigin(0);
+        if(!secondRound){
+
+            this.introDia = this.add.text(this.playerChar.x-100, this.playerChar.y - 150, "Oh, how unfortunate that was!").setOrigin(0);
+            this.introDia_2 = this.add.text(this.playerChar.x-100, this.playerChar.y - 100, "I am so sorry you had to go through that. Try again, friend!").setOrigin(0);
+
+        }
+        else if (secondRound){
+            this.introDia = this.add.text(this.playerChar.x, this.playerChar.y - 150, "Ok, this is no good at all. Since you’re incapable ", {fontFamily: 'Carrera',}).setOrigin(0);
+            this.introDia_1 = this.add.text(this.playerChar.x, this.playerChar.y - 100, "of doing this level, maybe I’ll keep it insolvable.", {fontFamily: 'Carrera',}).setOrigin(0);
+            console.log(this.counter);
+        }
+
     }
 
     update() {
@@ -84,14 +93,27 @@ class play2 extends Phaser.Scene {
 
         this.playerChar.isGrounded = this.playerChar.body.blocked.down;
 
+        if(keyLEFT.isDown) {
+            this.playerChar.setFlip(true, false);
+        }
+            else if(keyRIGHT.isDown) {
+                this.playerChar.resetFlip();
+        }
+
         if(this.playerChar.isGrounded) {
             if (Phaser.Input.Keyboard.JustDown(keySPACE)) {
             this.playerChar.setVelocity(0, -350);
             this.sound.play('jump');
+            if(secondRound){
+                this.cameras.main.shake(200);
+            }
             }
         }
 
+        if(!secondRound){
+
         if(this.counter == 0 && this.playerChar.x >= 1388){
+            this.diaFlower.destroy();
             this.diaFlower2.destroy();
             this.introDia.destroy();
             this.introDia_2.destroy();
@@ -105,18 +127,69 @@ class play2 extends Phaser.Scene {
             this.introDia4 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 100, "I made it possible this time, I promise!").setOrigin(0);
             this.counter++;
         }
+    }
+
+   else if(secondRound){
+
+        if( this.counter == 0 && Phaser.Input.Keyboard.JustDown(keyN)){
+            this.diaFlower
+            this.diaFlower2.destroy();
+            this.introDia.destroy();
+            this.introDiq_1.destroy();
+            this.counter++;
+        }
+
+        if( this.counter == 1 && this.playerChar.x >= 1280){
+            this.introDia2.destroy();
+            this.introDia2_1.destroy();
+            this.introDia3 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "That way, you’re stuck. No way to escape. ", {fontFamily: 'Carrera',}).setOrigin(0);
+            this.counter++;
+        }
+
+        if( this.counter == 2 && this.playerChar.x >= 2016){
+            this.introDia3.destroy();
+            this.introDia4 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "Stuck with me", {fontFamily: 'Carrera',}).setOrigin(0);
+            this.counter++;
+        }
+
+        if( this.counter == 3 && this.playerChar.x >= 2016 && this.playerChar.y <= 704){
+            this.introDia5 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "Forever", {fontFamily: 'Carrera',}).setOrigin(0);
+            this.counter++;
+        }
+
+        if( this.counter == 4 && this.playerChar.x >= 1728 && this.playerChar.y <= 640){
+            this.introDia6 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "And ever.", {fontFamily: 'Carrera',}).setOrigin(0);
+            this.counter++;
+        }
+
+        if( this.counter == 5 && this.playerChar.x >= 1728 && this.playerChar.y <= 640){
+            this.introDia7 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "And ever.", {fontFamily: 'Carrera',}).setOrigin(0);
+            this.add.text(this.playerChar.x - 150, this.playerChar.y - 100, "FOREVER and EVER.", {fontFamily: 'Carrera',}).setOrigin(0);
+            this.add.text(this.playerChar.x - 200, this.playerChar.y - 50, "FOREVER nd EVER and ever", {fontFamily: 'Carrera',}).setOrigin(0);
+            this.add.text(this.playerChar.x, this.playerChar.y - 200, "FOREVER FOREVER", {fontFamily: 'Carrera',}).setOrigin(0);
+            this.counter++;
+        }
+    }
 
     }
 
     check() {
-        this.scene.start("play3Scene");
         this.sound.play('hurt');
+
+        if(!secondRound){
+        this.scene.start("play3Scene");
+        }
+        else if (secondRound){
+            this.scene.start('gameOverv2Scene');
+        }
+        
     }
 
     checkFlower(){
 
             this.flower.destroy();
-            this.diaFlower2 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "Oh! What a nice flower you got there.").setOrigin(0);
+            this.diaFlower = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "Oh! What a nice flower you got there.").setOrigin(0);
+            this.diaFlower2 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 100, "You should put it on later").setOrigin(0);
     }
 
 }

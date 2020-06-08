@@ -6,7 +6,7 @@ class play3 extends Phaser.Scene {
     preload() {
         this.load.atlas('animation_atlas', './assets/animation.png', './assets/animation.json');
 
-        this.load.image('player', './assets/player_rose.png');
+        this.load.image('playerf', './assets/player_rose.png');
 
         this.load.image('allMapTileSprite', './assets/tileTesting.png');
         this.load.tilemapTiledJSON('platformerMap3', './assets/map3.json');
@@ -42,7 +42,7 @@ class play3 extends Phaser.Scene {
 
         this.physics.world.bounds.setTo(0, 0, map.widthInPixels, map.heightInPixels);
 
-        this.playerChar = new player(this, playerSpawn.x, playerSpawn.y, 'player');
+        this.playerChar = new player(this, playerSpawn.x, playerSpawn.y, 'playerf');
         //this.playerChar = this.physics.add.sprite(game.config.width/8, game.config.height - 150, 'player');
         this.playerChar.setGravityY(300);
         this.playerChar.setCollideWorldBounds(true);
@@ -74,6 +74,13 @@ class play3 extends Phaser.Scene {
 
         this.playerChar.isGrounded = this.playerChar.body.blocked.down;
 
+        if(keyLEFT.isDown) {
+            this.playerChar.setFlip(true, false);
+        }
+            else if(keyRIGHT.isDown) {
+                this.playerChar.resetFlip();
+        }
+
         if(this.playerChar.isGrounded) {
             if (Phaser.Input.Keyboard.JustDown(keySPACE)) {
             this.playerChar.setVelocity(0, -350);
@@ -86,26 +93,26 @@ class play3 extends Phaser.Scene {
         if(this.counter == 0 && this.playerChar.x >= 1728 && this.playerChar.y <= 928){
             this.introDia.destroy();
             this.introDia_2.destroy();
-            this.introDia2 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "Spectacular! Best… friend in the world!").setOrigin(0);
+            this.introDia2 = this.add.text(this.playerChar.x - 200, this.playerChar.y - 150, "Spectacular! Best… friend in the world!").setOrigin(0);
             this.counter++;
         }
 
         if(this.counter == 1 && this.playerChar.x >= 2048 && this.playerChar.y <= 768){
             this.introDia2.destroy();
-            this.introDia3 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "I am so happy for you! You and I make such a great team! ").setOrigin(0);
+            this.introDia3 = this.add.text(this.playerChar.x - 200, this.playerChar.y - 150, "I am so happy for you! You and I make such a great team! ").setOrigin(0);
             this.counter++;
         }
 
         if(this.counter == 2 && this.playerChar.x >= 1632 && this.playerChar.y <= 640){
             this.introDia3.destroy();
-            this.introDia4 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "Oh, my friend, this is marvelous!", {fontSize: '40px',}).setOrigin(0);
+            this.introDia4 = this.add.text(this.playerChar.x - 200, this.playerChar.y - 150, "Oh, my friend, this is marvelous!", {fontSize: '40px',}).setOrigin(0);
             this.counter++;
         }
 
         if(this.counter == 3 && this.playerChar.x >= 1824 && this.playerChar.y <= 416){
             this.introDia4.destroy();
             this.introDia5 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "We are almost to the end! I am having").setOrigin(0);
-            this.introDia5_1 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 100, "so much fun, I could do this forever!", {fontSize: '40px',}).setOrigin(0);
+            this.introDia5_1 = this.add.text(this.playerChar.x - 200, this.playerChar.y - 100, "so much fun, I could do this forever!", {fontSize: '40px',}).setOrigin(0);
             this.counter++;
         }
 
