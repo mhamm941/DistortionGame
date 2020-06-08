@@ -87,6 +87,10 @@ class gameOver extends Phaser.Scene {
             this.scene.start('playScene')
         }
 
+        if(Phaser.Input.Keyboard.JustDown(keyN)){
+            this.sound.play('select');
+        }
+
     }
 
 }

@@ -6,10 +6,15 @@ class gameOverv2 extends Phaser.Scene {
     secondRound = false;
 
     preload() {
+
+        this.load.image('background', './assets.gameovergameover.png');
+
         this.load.audio('select', './assets/select.wav');
     }
 
     create() {
+
+        this.background = this.add.tileSprite(0, 0, 860, 600, 'background').setOrigin(0, 0);
 
         this.counter = 0;
 
@@ -61,6 +66,10 @@ class gameOverv2 extends Phaser.Scene {
 
         if(this.counter == 4 && Phaser.Input.Keyboard.JustDown(keyN)){
             this.scene.start("menuScene");
+        }
+
+        if(Phaser.Input.Keyboard.JustDown(keyN)){
+            this.sound.play('select');
         }
 
     }
