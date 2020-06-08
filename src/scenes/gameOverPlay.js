@@ -3,16 +3,13 @@ class gameOverPlay extends Phaser.Scene {
         super("gameOverPlayScene");
     }
     
-
     preload() {
-        this.load.atlas('animation_atlas', './assets/animation.png', './assets/animation.json');
+      //  this.load.atlas('animation_atlas', './assets/animation.png', './assets/animation.json');
         this.load.image('player', './assets/player.png');
         this.load.image('block', './assets/block.png');
 
         this.load.image('allMapTileSprite', './assets/tileTesting.png');
         this.load.tilemapTiledJSON('platformerMapv2', './assets/map2v2.json');
-
-        //this.load.image('dialogBox', './assets/dialogBox.png');
 
         this.load.audio('jump', './assets/jump.wav');
         this.load.audio('hurt', './assets/hurt.wav');
@@ -32,8 +29,8 @@ class gameOverPlay extends Phaser.Scene {
 
         const playerSpawn = map.findObject("objects", obj => obj.name === "player spawn");
         const blockSpawn1 = map.findObject("objects", obj => obj.name === "block spawn");
-        const blockSpawn2 = map.findObject("objects", obj => obj.name === "block2 spawn");
-        const blockSpawn3 = map.findObject("objects", obj => obj.name === "block3 spawn");
+        // const blockSpawn2 = map.findObject("objects", obj => obj.name === "block2 spawn");
+        // const blockSpawn3 = map.findObject("objects", obj => obj.name === "block3 spawn");
 
         const doorLayer = map.createStaticLayer("door", tileset, 0, 0);
 
@@ -53,8 +50,8 @@ class gameOverPlay extends Phaser.Scene {
         this.physics.add.collider(this.playerChar, groundLayer);
 
         this.block1 = new obstacle(this, blockSpawn1.x, blockSpawn1.y, 'block');
-        this.block2 = new obstacle(this, blockSpawn2.x, blockSpawn2.y, 'block');
-        this.block3 = new obstacle(this, blockSpawn3.x, blockSpawn3.y, 'block');
+        // this.block2 = new obstacle(this, blockSpawn2.x, blockSpawn2.y, 'block');
+        // this.block3 = new obstacle(this, blockSpawn3.x, blockSpawn3.y, 'block');
 
         this.physics.add.collider(this.playerChar, this.block);
         this.physics.add.collider(this.block, groundLayer);
@@ -95,7 +92,6 @@ class gameOverPlay extends Phaser.Scene {
             this.introDia2 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 150, "This is a puzzle environment designed by yours truly!", {fontFamily: 'Carrera',}).setOrigin(0);
             this.introDia2_1 = this.add.text(this.playerChar.x - 100, this.playerChar.y - 100, "Hope you like it! [N]", {fontFamily: 'Carrera',}).setOrigin(0);
             this.counter++;
-            console.log(this.counter);
         }
 
         if( this.counter == 1 && Phaser.Input.Keyboard.JustDown(keyN)){

@@ -1,6 +1,6 @@
 class gameOverPlay2 extends Phaser.Scene {
     constructor() {
-        super("gameOverPlay2");
+        super("gameOverPlay2Scene");
     }
 
     preload() {

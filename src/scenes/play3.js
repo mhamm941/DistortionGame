@@ -6,7 +6,7 @@ class play3 extends Phaser.Scene {
     preload() {
         this.load.atlas('animation_atlas', './assets/animation.png', './assets/animation.json');
 
-        this.load.image('player', './assets/player.png');
+        this.load.image('player', './assets/player_rose.png');
 
         this.load.image('allMapTileSprite', './assets/tileTesting.png');
         this.load.tilemapTiledJSON('platformerMap3', './assets/map3.json');

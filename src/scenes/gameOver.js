@@ -3,6 +3,8 @@ class gameOver extends Phaser.Scene {
         super("gameOverScene");
     }
 
+    secondRound = true;
+
     preload() {
 
         this.load.image('roseBackground', './assets/gameover1.png');
@@ -26,6 +28,8 @@ class gameOver extends Phaser.Scene {
     }
 
     update() {
+
+        secondRound = true;
 
         if(this.counter == 0 && Phaser.Input.Keyboard.JustDown(keyN)){
             this.introDia.destroy();
@@ -73,12 +77,12 @@ class gameOver extends Phaser.Scene {
             this.introDia6.destroy();
             this.introDia6_1.destroy();
             this.introDia7 = this.add.text(game.config.width/2, game.config.height/2, "STOP!").setOrigin(0);
-            this.introDia7_1 = this.add.text(game.config.width/2, game.config.height/2 + 50, "PRESS [ENTER] TO END").setOrigin(0);
+            this.introDia7_1 = this.add.text(game.config.width/2, game.config.height/2 + 50, "PRESS [N] TO END").setOrigin(0);
             this.counter++;
         }
 
         if(this.counter == 6 && Phaser.Input.Keyboard.JustDown(keyN)){
-            this.scene.start('gameOverPlayScene')
+            this.scene.start('playScene')
         }
 
     }

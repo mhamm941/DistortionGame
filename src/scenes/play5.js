@@ -80,6 +80,7 @@ class play5 extends Phaser.Scene {
             if (Phaser.Input.Keyboard.JustDown(keySPACE)) {
             this.playerChar.setVelocity(0, -350);
             this.sound.play('jump');
+            this.cameras.main.shake(300);
             }
         }
 

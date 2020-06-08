@@ -155,7 +155,9 @@ class play extends Phaser.Scene {
 }
 
     check() {
-        this.scene.start('play2Scene');
         this.sound.play('hurt');
+        
+        this.scene.start('play2Scene');
+        
     }
 }
