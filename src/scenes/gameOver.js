@@ -79,7 +79,7 @@ class gameOver extends Phaser.Scene {
             this.introDia6.destroy();
             this.introDia6_1.destroy();
             this.introDia7 = this.add.text(game.config.width/2, game.config.height/2, "STOP!", {fontFamily: 'Carrera', fontSize: '40px',}).setOrigin(0);
-            this.introDia7_1 = this.add.text(game.config.width/2, game.config.height/2 + 50, "PRESS [N] TO END").setOrigin(0);
+            this.introDia7_1 = this.add.text(game.config.width/2, game.config.height/2 + 50, "PRESS [N] TO END", {fontFamily: 'Carrera',}).setOrigin(0);
             this.counter++;
         }
 

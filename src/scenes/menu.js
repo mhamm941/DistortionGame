@@ -11,6 +11,10 @@ class menu extends Phaser.Scene {
 
     create() {
 
+        mainTheme.setMute(false);
+        distTheme1.setMute(true);
+        distTheme2.setMute(true);
+
         this.background = this.add.tileSprite(0, 0, 850, 600, 'background').setOrigin(0, 0);
 
         let centerX = game.config.width/2;

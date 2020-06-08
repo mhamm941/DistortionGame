@@ -55,12 +55,12 @@ class gameOverv2 extends Phaser.Scene {
             this.introDia4.destroy();
             this.introDia4_1.destroy();
             this.introDia5 = this.add.text(game.config.width/2, game.config.height/2, "DON’T END THE GAME", {fontFamily: 'Carrera',}).setOrigin(0);
-            this.introDia5_1 = this.add.text(game.config.width/2, game.config.height/2 + 50, "PRESS [N] TO END").setOrigin(0);
+            this.introDia5_1 = this.add.text(game.config.width/2, game.config.height/2 + 50, "PRESS [N] TO END", {fontFamily: 'Carrera',}).setOrigin(0);
             this.counter++;
         }
 
         if(this.counter == 4 && Phaser.Input.Keyboard.JustDown(keyN)){
-            this.scene.start("menuScene");
+            this.scene.start("endScene");
         }
 
     }
