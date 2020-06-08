@@ -1,5 +1,5 @@
 let config = {
-    type: Phaser.WEBGL,
+    type: Phaser.AUTO,
     pixelArt: true,
     width: 850,
     height: 600,

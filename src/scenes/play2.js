@@ -9,7 +9,10 @@ class play2 extends Phaser.Scene {
         this.load.image('player', './assets/player.png');
         this.load.image('flower', './assets/theRose.png');
 
-        this.load.image('allMapTileSprite', './assets/tileTesting.png');
+        this.load.spritesheet('allMapTileSprite', './assets/tileTesting.png', {
+            frameWidth: 32,
+            frameHeight: 32,
+        });
         this.load.tilemapTiledJSON('platformerMap2', './assets/map2_1.json');
 
         this.load.audio('jump', './assets/jump.wav');
@@ -28,14 +31,12 @@ class play2 extends Phaser.Scene {
         const map = this.add.tilemap("platformerMap2");
         const tileset = map.addTilesetImage("tileTesting", "allMapTileSprite");
 
-        const backgroundLayer = map.createStaticLayer("background", tileset, 0, 0);
-        const groundLayer = map.createStaticLayer("ground", tileset, 0, 0);
-        const spikeLayer = map.createStaticLayer("spikes", tileset, 0, 0);
+        const backgroundLayer = map.createDynamicLayer("background", tileset, 0, 0);
+        const groundLayer = map.createDynamicLayer("ground", tileset, 0, 0);
+        const spikeLayer = map.createDynamicLayer("spikes", tileset, 0, 0);
 
         const playerSpawn = map.findObject("objects", obj => obj.name === "player spawn");
         const flowerSpawn = map.findObject("objects", obj => obj.name === "flower spawn");
-
-        //const doorLayer = map.createStaticLayer("door", tileset, 0, 0);
 
         groundLayer.setCollisionByProperty( {collides: true} );
 

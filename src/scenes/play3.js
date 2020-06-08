@@ -8,7 +8,10 @@ class play3 extends Phaser.Scene {
 
         this.load.image('playerf', './assets/player_rose.png');
 
-        this.load.image('allMapTileSprite', './assets/tileTesting.png');
+        this.load.spritesheet('allMapTileSprite', './assets/tileTesting.png', {
+            frameWidth: 32,
+            frameHeight: 32,
+        });
         this.load.tilemapTiledJSON('platformerMap3', './assets/map3.json');
 
         this.load.audio('jump', './assets/jump.wav');
@@ -26,13 +29,13 @@ class play3 extends Phaser.Scene {
         const map = this.add.tilemap("platformerMap3");
         const tileset = map.addTilesetImage("tileTesting", "allMapTileSprite");
 
-        const backgroundLayer = map.createStaticLayer("background", tileset, 0, 0);
-        const groundLayer = map.createStaticLayer("ground", tileset, 0, 0);
-        const spikeLayer = map.createStaticLayer("spikes", tileset, 0, 0);
+        const backgroundLayer = map.createDynamicLayer("background", tileset, 0, 0);
+        const groundLayer = map.createDynamicLayer("ground", tileset, 0, 0);
+        const spikeLayer = map.createDynamicLayer("spikes", tileset, 0, 0);
 
         const playerSpawn = map.findObject("objects", obj => obj.name === "player spawn");
 
-        const doorLayer = map.createStaticLayer("door", tileset, 0, 0);
+        const doorLayer = map.createDynamicLayer("door", tileset, 0, 0);
 
         groundLayer.setCollisionByProperty( {collides: true} );
 

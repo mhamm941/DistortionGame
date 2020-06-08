@@ -9,7 +9,10 @@ class play extends Phaser.Scene {
         this.load.image('player', './assets/player.png');
         this.load.image('block', './assets/block.png');
 
-        this.load.image('allMapTileSprite', './assets/tileTesting.png');
+        this.load.spritesheet('allMapTileSprite', './assets/tileTesting.png', {
+            frameWidth: 32,
+            frameHeight: 32,
+        });
         this.load.tilemapTiledJSON('platformerMap', './assets/map2.json');
 
         //this.load.image('dialogBox', './assets/dialogBox.png');
@@ -26,14 +29,14 @@ class play extends Phaser.Scene {
         const map = this.add.tilemap("platformerMap");
         const tileset = map.addTilesetImage("tileTesting", "allMapTileSprite");
 
-        const backgroundLayer = map.createStaticLayer("background", tileset, 0, 0);
-        const groundLayer = map.createStaticLayer("ground", tileset, 0, 0);
-        const spikeLayer = map.createStaticLayer("spikes", tileset, 0, 0);
+        const backgroundLayer = map.createDynamicLayer("background", tileset, 0, 0);
+        const groundLayer = map.createDynamicLayer("ground", tileset, 0, 0);
+        const spikeLayer = map.createDynamicLayer("spikes", tileset, 0, 0);
 
         const playerSpawn = map.findObject("objects", obj => obj.name === "player spawn");
         const blockSpawn = map.findObject("objects", obj => obj.name === "block spawn");
 
-        const doorLayer = map.createStaticLayer("door", tileset, 0, 0);
+        const doorLayer = map.createDynamicLayer("door", tileset, 0, 0);
 
         groundLayer.setCollisionByProperty( {collides: true} );
 
